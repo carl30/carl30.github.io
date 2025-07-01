@@ -1,119 +1,348 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>Carl's DeepSeek Assistant</title>
-    <style>
-        #chat-container { max-width: 600px; margin: 2rem auto; padding: 20px; font-family: Arial, sans-serif; }
-        #response { height: 400px; overflow-y: auto; border: 1px solid #e1e4e8; border-radius: 8px; padding: 15px; margin-bottom: 15px; background: #f6f8fa; }
-        #user-input { width: 75%; padding: 10px; border: 1px solid #d1d5da; border-radius: 4px; }
-        button { padding: 10px 15px; background: #2ea44f; color: white; border: none; border-radius: 4px; cursor: pointer; }
-        .user-msg { color: #24292e; margin-bottom: 10px; }
-        .assistant-msg { color: #0366d6; margin-bottom: 15px; }
-
-        body {
-            text-align: justify;
-            widows: 0;
-            orphans: 0;
-            font-family: 等线;
-            font-size: 10.5pt
-        }
-
-        p {
-            margin: 0pt
-        }
-
-        li,
-        table {
-            margin-top: 0pt;
-            margin-bottom: 0pt
-        }
-
-        .CommentSubject {
-            text-align: left;
-            widows: 0;
-            orphans: 0;
-            font-size: 10.5pt;
-            font-weight: bold;
-            -aw-style-name: comment-subject;
-            -aw-style-parent: comment-text
-        }
-
-        .CommentText {
-            text-align: left;
-            line-height: normal;
-            widows: 0;
-            orphans: 0;
-            font-size: 10.5pt;
-            -aw-style-name: comment-text
-        }
-
-        .Footer {
-            text-align: left;
-            line-height: normal;
-            widows: 0;
-            orphans: 0;
-            font-size: 9pt;
-            -aw-style-name: footer
-        }
-
-        .Header {
-            text-align: center;
-            line-height: normal;
-            widows: 0;
-            orphans: 0;
-            border-bottom: 0.75pt solid #000000;
-            padding-bottom: 1pt;
-            font-size: 9pt;
-            -aw-style-name: header
-        }
-
-        .ListParagraph {
-            text-indent: 21pt;
-            text-align: justify;
-            widows: 0;
-            orphans: 0;
-            font-size: 10.5pt;
-            -aw-style-name: list-paragraph
-        }
-
-        span.CommentReference {
-            font-size: 10.5pt;
-            -aw-style-name: comment-reference
-        }
-
-        span.FollowedHyperlink {
-            text-decoration: underline;
-            color: #954f72;
-            -aw-style-name: followed-hyperlink
-        }
-
-        span.Hyperlink {
-            text-decoration: underline;
-            color: #0563c1;
-            -aw-style-name: hyperlink
-        }
-
-        span.Strong {
-            font-weight: bold;
-            -aw-style-name: strong
-        }
-
-        span.a2 {
-            font-weight: bold
-        }
-
-        span.a {
-            font-size: 9pt
-        }
-
-        span.a0 {
-            font-size: 9pt
-        }
-
-        .TableGrid {}
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>何家俊(Carl) - 资深开发工程师 & DeepSeek Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="resume-container">
+        <!-- Header Section -->
+        <header class="resume-header">
+            <div class="decorative-shape"></div>
+            <div class="decorative-shape-2"></div>
+            <div class="header-content">
+                <div class="profile-img">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="header-text">
+                    <h1 class="name">何家俊 Carl</h1>
+                    <div class="title">资深开发工程师</div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>185 0303 6612</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>ahjun30@hotmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Summary Section -->
+        <section class="resume-section">
+            <h2 class="section-title">
+                <i class="fas fa-user"></i>个人简介
+            </h2>
+            <div class="section-content">
+                <p>10年企业级软件研发经验，具备小团队管理经验。专注于企业级解决方案的架构、实施和支持，具备出色的DevOps实践能力，熟悉敏捷开发流程，对软件工程的优雅和效率充满热情。</p>
+                <p>擅长将技术专长与业务需求相结合，致力于通过创新解决方案提升客户体验和产品价值。具备优秀的沟通能力和团队合作精神，能够理解并引导客户需求，提供定制化的技术解决方案。</p>
+            </div>
+        </section>
+        <!-- Experience Section - 完整保留所有经历 -->
+        <section class="resume-section">
+            <h2 class="section-title">
+                <i class="fas fa-briefcase"></i>工作及项目经验
+            </h2>
+            <div class="section-content">
+                <!-- 个人AI项目 -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">个人AI项目独立开发者</div>
+                        <div class="period">2025.04-Current</div>
+                    </div>
+                    <div class="position">全栈开发工程师（AI方向） | 自研项目</div>
+                    <div class="project-title">技术升级计划</div>
+                    <ul class="achievements">
+                        <li>系统性研究大语言模型工程化应用（Claude 3.7），聚焦教育场景的AI能力集成</li>
+                    </ul>
+                    <div class="project-title">全栈项目开发</div>
+                    <ul class="achievements">
+                        <li>独立完成AI教育小程序的架构设计、开发部署及运维，技术栈：Java 17 + Spring Boot/ Uni-app / Milvus / Redis</li>
+                        <li>设计教科书知识点结构化处理Pipeline：上传题库/知识点→文本向量化（text-embedding-ada-002）→Milvus向量库构建</li>
+                        <li>构建语义检索链：用户问题→向量化检索→关联知识点→Claude 3.7生成式回答</li>
+                        <li>运用Claude 3.7 Builder加速项目编码，构建Prompt Engineering规范，设计AI生成代码质量评估体系</li>
+                    </ul>
+                </div>
+                <!-- 深圳希音 -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">深圳希音信息技术有限公司</div>
+                        <div class="period">2023.06 -- 2025.03 (1年9个月)</div>
+                    </div>
+                    <div class="position">资深开发工程师</div>
+                    
+                    <div class="project-title">可视页面配置化系统，AIGC能力</div>
+                    <ul class="achievements">
+                        <li>开发并维护了高度可配置的后台系统，支持首页、列表页和商品详情页等页面组件通过可视化界面进行配置</li>
+                        <li>系统成功拓展应用于平台化店铺装修，满足合规要求，通过跨物理中心存储数据，确保合法性</li>
+                    </ul>
+                    
+                    <div class="project-title">智能客服</div>
+                    <ul class="achievements">
+                        <li>使用AI实现智能客服，担任跨部门协作领导者，协调产品、前端、后端及测试团队</li>
+                        <li>推动文档标准化处理和问题解决流程自动化</li>
+                        <li>探讨向量数据库、token、chunking等技术，实施embeddings和prompt tuning</li>
+                        <li>智能客服上线半年内，问题解决率达到33%（无反馈计入未解决）</li>
+                    </ul>
+                    
+                    <div class="project-title">比价系统（全球运营中心）</div>
+                    <ul class="achievements">
+                        <li>针对多个不同竞对平台的售价采购数据，整合为6大类十几小类策略的采购链路</li>
+                        <li>汇聚成可比价数据，接入AI算法自动判断是否可比价；提供审批和质检功能</li>
+                        <li>深度理解并运用消息中间件技术，确保系统间高效、准确通信</li>
+                    </ul>
+                    
+                    <div class="project-title">日常运维</div>
+                    <ul class="achievements">
+                        <li>负责生产环境的快速问题定位和解决，确保系统高效稳定运行</li>
+                        <li>实施服务器、中间件和数据库的压力监控及动态调配，保证系统高可用性</li>
+                    </ul>
+                </div>
+                
+                <!-- 顺丰科技 -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">顺丰科技有限公司</div>
+                        <div class="period">2021.05 -- 2023.02 (1年10个月)</div>
+                    </div>
+                    <div class="position">后端开发高级工程师 | 末端渠道中心小哥产品研发部</div>
+                    
+                    <div class="project-title">新实时评价系统</div>
+                    <ul class="achievements">
+                        <li>把顺丰集团管理与运营快递小哥的目标以数字化形式管理，涵盖客评、客诉、时效履约、风险管控、运营活动、新员工课程等模块</li>
+                        <li>兼容T-1与未来实时数据源，基于快速处理实时数据设计和搭建新系统</li>
+                        <li>高度配置化系统实现，支持多维度配置系统功能</li>
+                        <li>实现可配置化概率、有系统崩溃恢复机制的抽奖系统</li>
+                        <li>实现并列排行榜，计算超越人数百分比</li>
+                        <li>实现二级缓存工具类</li>
+                        <li>梳理并整合申诉模块在特区版、全国版和融合版的评价数据</li>
+                        <li>新系统推广全网37w+小哥，覆盖率97%</li>
+                        <li>16个城市服务分关联计提，涉及10w+小哥，超过9w次小哥实现收入增加，平均每人增加670元</li>
+                        <li>线上运营活动全年累积14场，超过25w人参与</li>
+                        <li>活动配置平台共39个地区使用，使用率86%，22年Q4地区自主创建活动数40+</li>
+                        <li>获得末端渠道中心五星员工，2022.08</li>
+                    </ul>
+                </div>
+                
+                <!-- 平安普惠 -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">平安普惠企业管理有限公司</div>
+                        <div class="period">2019.08 -- 2021.04 (1年9个月)</div>
+                    </div>
+                    <div class="position">资深开发工程师、产品模块负责人 | 产品平台研发组</div>
+                    
+                    <div class="project-title">风险资产管理系统</div>
+                    <ul class="achievements">
+                        <li>通过风控因素及统计规则满足资金方风险率要求，修正参数把控资金风险并提升贷款产品收益</li>
+                        <li>管理4人小组，负责系统设计、技术选型，管控质量及发布部署</li>
+                        <li>利用多系统解耦功能，通过缓存、线程池、RocketMQ，数据库读写分离等技术实现系统</li>
+                        <li>系统上线后过去一年利润收益增加28%，系统日均请求量400w+</li>
+                    </ul>
+                    
+                    <div class="project-title">平安普惠信贷产品管理系统</div>
+                    <ul class="achievements">
+                        <li>核心系统管理普惠多产线、跨BU的信贷产品，输出贷前产品决策和属性、贷后还款方式与核算规则</li>
+                        <li>定价模块根据不同客户资质、维度策略计算输出IRR</li>
+                        <li>采用多级分布式缓存、负载均衡、读写分离等架构保证高可用、高并发</li>
+                        <li>落地配置页面并推广业务使用，2个月内成功接入38家资金方，系统全年可用率大于99.98%</li>
+                    </ul>
+                </div>
+                
+                <!-- 深圳携程 -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">深圳携程网络技术有限公司</div>
+                        <div class="period">2015.08 -- 2019.08 (4年)</div>
+                    </div>
+                    <div class="position">高级开发工程师 | 国内机票Online</div>
+                    
+                    <div class="project-title">携程国内机票Online预订流程</div>
+                    <ul class="achievements">
+                        <li>负责国内机票首页、列表页、预订页、支付页和订单页的日常需求迭代、技术改造</li>
+                        <li>列表页日均请求量2700w+，预定流程800w+</li>
+                        <li>前后端开发，适应多语言开发（Java, C#, JS）</li>
+                        <li>独立负责预订页增值服务产品预订模块需求迭代及技术改造，获携程2018年年度优秀项目大奖</li>
+                        <li>生产发布，多次成功应对重大需求上线及生产问题处理</li>
+                        <li>主导需求AB测试及数据分析，推动产品优化</li>
+                        <li>主动协助PM完善产品需求，协调开发测试产品资源，以更低技术成本实现产品效果</li>
+                        <li>在团队里总结分享知识，规范发布流程，使平均发布时间减少30%</li>
+                    </ul>
+                    
+                    <div class="project-title">国内机票Online Java全面重构</div>
+                    <ul class="achievements">
+                        <li>参与整体业务梳理、架构设计、技术选型和实际编码工作、质量保证</li>
+                        <li>负责核心功能，预订页、增值服务产品预订模块的需求迭代及改造</li>
+                        <li>采用灰度上线方式发布重构后站点，实时监控发布状态，保证生产零事故</li>
+                        <li>同步汇总各开发进度给技术经理，把握改造进度、方案制定和及时解决障碍</li>
+                    </ul>
+                    
+                    <div class="project-title">发现低价项目</div>
+                    <ul class="achievements">
+                        <li>开发携程第一个聚合国内国际机票低价接口服务，为营销活动提供高并发需求服务</li>
+                        <li>通过优化数据库读写机制，采用Redis进行读写缓存，降低DB压力</li>
+                        <li>应对微信活动推送所带来的瞬间流量高峰(大于3k QPS)，接口响应时间提高50%</li>
+                    </ul>
+                </div>
+                
+                <!-- Expedia -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="company">Expedia离岸研发中心</div>
+                        <div class="period">2013.09 -- 2015.08 (2年)</div>
+                    </div>
+                    <div class="position">开发工程师</div>
+                    
+                    <ul class="achievements">
+                        <li>在8人国际研发小组中任后端工程师，负责美国、澳大利亚、新西兰站点的优惠券系统设计与维护</li>
+                        <li>负责站点相关零散的需求分析、实现与迭代交付</li>
+                        <li>全英环境，跨国全球化协作开发，CICD流程，敏捷开发流程，Git命令的边缘使用场景</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Skills Section - 优化为更紧凑样式 -->
+        <section class="resume-section">
+            <h2 class="section-title">
+                <i class="fas fa-code"></i>专业技能
+            </h2>
+            <div class="section-content">
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <div class="skill-title">AI工程能力</div>
+                        <div class="skill-items">
+                            <div class="skill-tag">Prompt Engineering</div>
+                            <div class="skill-tag">RAG Architecture</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="skill-title">技术能力</div>
+                        <div class="skill-items">
+                            <div class="skill-tag">Java 17+</div>
+                            <div class="skill-tag">C#</div>
+                            <div class="skill-tag">JavaScript</div>
+                            <div class="skill-tag">数据库优化</div>
+                            <div class="skill-tag">系统架构设计</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="skill-title">数据相关</div>
+                        <div class="skill-items">
+                            <div class="skill-tag">MySQL</div>
+                            <div class="skill-tag">Oracle DB</div>
+                            <div class="skill-tag">Redis</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="skill-title">框架与中间件</div>
+                        <div class="skill-items">
+                            <div class="skill-tag">Spring Framework</div>
+                            <div class="skill-tag">Spring Boot</div>
+                            <div class="skill-tag">Spring MVC</div>
+                            <div class="skill-tag">Spring Cloud</div>
+                            <div class="skill-tag">RESTful</div>
+                            <div class="skill-tag">Microservices</div>
+                            <div class="skill-tag">Dubbo</div>
+                            <div class="skill-tag">MyBatis</div>
+                            <div class="skill-tag">Kafka MQ</div>
+                            <div class="skill-tag">RocketMQ</div>
+                            <div class="skill-tag">Nginx</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="skill-title">容器化</div>
+                        <div class="skill-items">
+                            <div class="skill-tag">Docker</div>
+                            <div class="skill-tag">Kubernetes</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="skill-title">工具/方法论</div>
+                        <div class="skill-items">
+                            <div class="skill-tag">Git</div>
+                            <div class="skill-tag">Jenkins</div>
+                            <div class="skill-tag">Maven</div>
+                            <div class="skill-tag">Agile/Scrum</div>
+                            <div class="skill-tag">DevOps</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volunteer Section -->
+        <section class="resume-section">
+            <h2 class="section-title">
+                <i class="fas fa-hands-helping"></i>志愿者经历
+            </h2>
+            <div class="section-content">
+                <div class="volunteer-item">
+                    <div class="volunteer-header">
+                        <div class="volunteer-org">First Code Academy</div>
+                        <div class="period">2018.11 -- 2019.06 (8个月)</div>
+                    </div>
+                    <div class="volunteer-role">导师</div>
+                    <ul class="achievements">
+                        <li>英语教学4-7岁小朋友Scratch编程(模块化可视编程语言)</li>
+                        <li>控制机器人或APP内的动画展示逻辑</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="resume-section">
+            <h2 class="section-title">
+                <i class="fas fa-graduation-cap"></i>教育信息
+            </h2>
+            <div class="section-content">
+                <div class="education-item">
+                    <div class="education-header">
+                        <div class="institution">广东嘉应学院计算机科学与技术学院</div>
+                    </div>
+                    <div class="degree">软件工程专业，本科学士学位</div>
+                    <div class="period">2009 -- 2013</div>
+                    <p>粤语(母语)，国语(母语)，英语(IELTS: 6.5; CET-6)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section class="resume-section">
+            <h2 class="section-title">
+                <i class="fas fa-book"></i>课程学习经历
+			</h2>
+            <div class="section-content">
+                <div class="course-item">商业领导力，2020.10</div>
+                <div class="course-item">企业经营管理（LDP+），2020.06</div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section class="resume-section">
+            <h2 class="section-title">
+                <i class="fas fa-award"></i>证书奖项
+            </h2>
+            <div class="section-content">
+                <ul class="achievements">
+                    <li>PMP项目管理认证，2022.06.25</li>
+                    <li>末端渠道中心五星员工，2022.08</li>
+                    <li>携程2018年年度优秀项目大奖</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!-- AI Assistant 聊天区 -->
     <div id="chat-container">
         <h1>Carl's Personal Assistant 🤖</h1>
         <div id="response"></div>
@@ -122,716 +351,43 @@
             <button onclick="sendMessage()">Send</button>
         </div>
     </div>
-    <div>Hello!I'm Carl.</div>
-    <div>
-        <p style="text-align:center; font-size:16pt"><span
-                style="height:0pt; text-align:left; display:block; position:absolute; z-index:0"><img
-                    src="images/Aspose.Words.d9e95076-1ea4-4b45-8056-e7fe4e6a99d1.001.jpeg" width="105" height="105"
-                    alt=""
-                    style="margin-left:441pt; -aw-left-pos:441pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:none; position:absolute" /></span><span
-                style="font-weight:bold">何家俊Carl</span></p>
-        <p style="text-align:center"><span>185 0303 6612 | </span><a href="mailto:ahjun30@hotmail.com"
-                style="text-decoration:none"><span class="Hyperlink">ahjun30@hotmail.com</span></a></p>
-        <p style="text-align:center"><span>求职意向: 资深开发工程师</span></p>
-        <table cellspacing="0" cellpadding="0" class="TableGrid"
-            style="width:525.2pt; -aw-border-insideh:0.5pt single #000000; -aw-border-insidev:0.5pt single #000000; border-collapse:collapse">
-            <tr style="height:16.05pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt"><span
-                            style="font-weight:bold; color:#1f4e79">个人简介</span></p>
-                </td>
-            </tr>
-            <tr style="height:63.55pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt"><span>10年企业级软件研发经验，具备小团队管理经验。</span></p>
-                    <p style="text-align:justify; font-size:10.5pt">
-                        <span>专注于企业级解决方案的架构、实施和支持，具备出色的DevOps实践能力，熟悉敏捷开发流程，对软件工程的优雅和效率充满热情。擅长将技术专长与业务需求相结合，致力于通过创新解决方案提升客户体验和产品价值。具备优秀的沟通能力和团队合作精神，能够理解并引导客户需求，提供定制化的技术解决方案。</span>
-                    </p>
-                </td>
-            </tr>
-            <tr style="height:21.55pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:12pt"><span
-                            style="font-weight:bold; color:#1f4e79">工作及项目经验</span></p>
-                </td>
-            </tr>
-            <tr style="height:31.35pt">
-                <td colspan="2"
-                    style="width:312.25pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-bottom:0.5pt single">
-                    <p style="text-align:justify; font-size:12pt"><span style="font-weight:bold">个人AI项目独立开发者</span></p>
-                </td>
-                <td
-                    style="width:191.3pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-bottom:0.5pt single">
-                    <p style="text-align:right; font-size:12pt"><span style="font-weight:bold">2025.04-Current</span>
-                    </p>
-                </td>
-            </tr>
-            <tr style="height:12.25pt">
-                <td colspan="3"
-                    style="width:514.4pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-top:0.5pt single">
-                    <p style="font-size:10.5pt"><span style="font-style:italic; color:#1f4e79">全栈开发工程师（AI方向）|
-                            自研项目)</span></p>
-                </td>
-            </tr>
-            <tr style="height:31.35pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="font-size:10.5pt"><span
-                            style="font-weight:bold">技术升级计划：</span><span>系统性研究大语言模型工程化应用（Claude
-                            3.7），聚焦教育场景的AI能力集成</span></p>
-                    <p style="font-size:10.5pt"><span
-                            style="font-weight:bold">全栈项目开发：</span><span>独立完成AI教育小程序的架构设计、开发部署及运维，技术栈：Java 17 + Spring
-                            Boot/ Uni-app / Milvus / Redis</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:22pt; text-indent:-22pt; text-align:left; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:14.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:14.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>设计教科书知识点结构化处理Pipeline：上传题库/知识点→文本向量化（text-embedding-ada-002）→Milvus向量库构建</span>
-                    </p>
-                    <p class="ListParagraph"
-                        style="margin-left:22pt; text-indent:-22pt; text-align:left; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:14.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:14.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>构建语义检索链：用户问题→向量化检索→关联知识点→Claude 3.7生成式回答</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:22pt; text-indent:-22pt; text-align:left; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:14.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:14.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>运用Claude 3.7 Builder加速项目编码，构建Prompt Engineering规范，设计AI生成代码质量评估体系</span>
-                    </p>
-                </td>
-            </tr>
-            <tr style="height:20.25pt">
-                <td colspan="2"
-                    style="width:312.25pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-bottom:0.5pt single">
-                    <p style="text-align:justify; font-size:12pt"><span style="font-weight:bold">深圳希音信息技术有限公司</span></p>
-                </td>
-                <td
-                    style="width:191.3pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-bottom:0.5pt single">
-                    <p style="text-align:right; font-size:12pt"><span style="font-weight:bold">2023.06 –
-                            2025.03(1y9M)</span></p>
-                </td>
-            </tr>
-            <tr style="height:16.05pt">
-                <td colspan="3"
-                    style="width:514.4pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-top:0.5pt single">
-                    <p style="font-size:10.5pt"><span style="font-style:italic; color:#1f4e79">资深开发工程师</span></p>
-                </td>
-            </tr>
-            <tr style="height:16.05pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="font-size:10.5pt"><span
-                            style="font-weight:bold; font-style:italic">可视页面配置化系统，AIGC能力</span></p>
-                </td>
-            </tr>
-            <tr style="height:15.3pt">
-                <td style="width:251.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="font-size:10.5pt"><span style="font-weight:bold">比价系统</span></p>
-                </td>
-                <td colspan="2" style="width:251.8pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:right; font-size:10.5pt"><span style="font-style:italic">全球运营中心</span></p>
-                </td>
-            </tr>
-            <tr style="height:48.2pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p class="ListParagraph"
-                        style="margin-left:22pt; text-indent:-22pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:14.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:14.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span style="font-weight:bold">电商竞价</span><span>:
-                            针对多个不同竞对平台的售价采购数据，整合为6大类十几小类策略的采购链路，汇聚成可比价数据，并且接入AI算法自动判断是否可比价；提供审批和质检功能。深度理解并运用消息中间件技术，确保了系统之间的高效、准确通信。</span>
-                    </p>
-                </td>
-            </tr>
-            <tr style="height:16.05pt">
-                <td style="width:251.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="font-size:10.5pt"><span style="font-weight:bold">单元控制中心</span></p>
-                </td>
-                <td colspan="2" style="width:251.8pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:right; font-size:10.5pt"><span style="font-style:italic">AIDC(数字智能中心)
-                            平台研发部</span></p>
-                </td>
-            </tr>
-            <tr style="height:143.25pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt">
-                        <span>开发并维护了一个高度可配置的后台系统，该系统支持首页、列表页和商品详情页等页面组件通过可视化界面进行配置，显著提升了系统的易用性和可维护性。此外，该系统还成功拓展应用于平台化店铺装修，并满足合规要求，通过跨物理中心存储数据，确保合法性。</span>
-                    </p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span style="font-weight:bold">智能客服</span><span>:
-                            使用AI实现智能客服。担任跨部门协作领导者，成功协调产品、前端、后端及测试团队，推动了文档标准化处理和问题解决流程的自动化。深入探讨了向量数据库、token、chunking等技术，实施了embeddings和prompt
-                            tuning，提高了系统的智能化水平。智能客服上线半年内，问题解决率达到33%（无反馈计入未解决）。</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; text-align:left; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span style="font-weight:bold">日常运维</span><span>:
-                            负责生产环境的快速问题定位和解决，确保系统的高效稳定运行。实施服务器、中间件和数据库的压力监控及动态调配，保证了系统的高可用性。</span></p>
-                </td>
-            </tr>
-            <tr style="height:31.35pt">
-                <td colspan="2"
-                    style="width:312.25pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-bottom:0.5pt single">
-                    <p style="text-align:justify; font-size:12pt"><span style="font-weight:bold">顺丰科技有限公司</span></p>
-                </td>
-                <td
-                    style="width:191.3pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-bottom:0.5pt single">
-                    <p style="text-align:right; font-size:12pt"><span style="font-weight:bold">2021.05 –
-                            2023.02(1y10M)</span></p>
-                </td>
-            </tr>
-            <tr style="height:16.05pt">
-                <td
-                    style="width:251.75pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-top:0.5pt single">
-                    <p style="text-align:justify; font-size:10.5pt"><span
-                            style="font-style:italic; color:#1f4e79">后端开发高级工程师</span></p>
-                </td>
-                <td colspan="2"
-                    style="width:251.8pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-top:0.5pt single">
-                    <p style="text-align:right; font-size:10.5pt"><span style="font-style:italic">末端渠道中心小哥产品研发部</span>
-                    </p>
-                </td>
-            </tr>
-            <tr style="height:16.05pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:11pt"><span
-                            style="font-weight:bold; font-style:italic">从零开始构造新系统，BDP(Etl, Hive)，Kafka
-                            MQ，Redis深度使用</span></p>
-                </td>
-            </tr>
-            <tr style="height:15.3pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:11pt"><span style="font-weight:bold">新实时评价系统</span></p>
-                </td>
-            </tr>
-            <tr style="height:223.7pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt">
-                        <span>把顺丰集团管理与运营快递小哥的目标以数字化的形式进行管理。其中包括客评、客诉、时效履约、风险管控、运营活动、新员工课程，员工学习等模块功能。</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>兼容T-1与未来实时数据源，基于快速处理实时数据而设计和搭建的新系统；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>高度配置化系统实现，支持多维度配置系统功能，如各类运营活动；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>可配置化概率的，有系统崩溃恢复机制的抽奖系统；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>实现并列排行榜，并计算超越人数百分比；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>二级缓存工具类的实现；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>梳理并整合申诉模块在特区版、全国版和融合版的各项评价数据；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>新系统从试点城市到目前已推广全网37w+小哥，覆盖率97%；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>16个城市服务分关联计提，涉及10w+小哥，超过9w次小哥实现收入增加，平均每人增加670元；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>线上运营活动全年累积14场，超过25w人参与，服务质量与业务双提升；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>活动配置平台共39个地区使用，使用率86%，22年Q4地区自主创建活动数40+，活动配置化，活动条件、奖励支持千人千面；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>末端渠道中心五星员工，2022.08；</span></p>
-                </td>
-            </tr>
-            <tr style="height:7.3pt">
-                <td colspan="2"
-                    style="width:312.25pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-bottom:0.5pt single">
-                    <p style="text-align:justify; font-size:12pt"><span style="font-weight:bold">平安普惠企业管理有限公司</span></p>
-                </td>
-                <td
-                    style="width:191.3pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-bottom:0.5pt single">
-                    <p style="text-align:right; font-size:12pt"><span style="font-weight:bold">2019.08 –
-                            2021.04(1y9M)</span></p>
-                </td>
-            </tr>
-            <tr style="height:7.3pt">
-                <td
-                    style="width:251.75pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-top:0.5pt single">
-                    <p style="text-align:justify; font-size:10.5pt"><span
-                            style="font-style:italic; color:#1f4e79">资深开发工程师、产品模块负责人</span></p>
-                </td>
-                <td colspan="2"
-                    style="width:251.8pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-top:0.5pt single">
-                    <p style="text-align:right; font-size:10.5pt"><span style="font-style:italic">产品平台研发组</span></p>
-                </td>
-            </tr>
-            <tr style="height:7.3pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:11pt"><span
-                            style="font-weight:bold; font-style:italic">小组管理经验学习与实践，互联网金融，风险资产管理，高度配置化系统设计与实现</span></p>
-                </td>
-            </tr>
-            <tr style="height:7.3pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:11pt"><span style="font-weight:bold">风险资产管理系统</span></p>
-                </td>
-            </tr>
-            <tr style="height:7.3pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt">
-                        <span>该系统通过风控因素及统计规则，满足与普惠合作的资金方的风险率要求，并且不断修正参数把控资金风险并持续提升普惠贷款产品的最大收益。</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>管理4人小组，负责本系统的设计，技术选型，并管控质量及发布部署事宜；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>利用多系统解耦资产管理系统功能，并通过缓存、线程池、RocketMQ，数据库读写分离等技术手段实现该系统；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>系统上线后过去一年利润收益增加28%，系统日均请求量400w+；</span></p>
-                </td>
-            </tr>
-            <tr style="height:7.3pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:11pt"><span style="font-weight:bold">平安普惠信贷产品管理系统</span></p>
-                </td>
-            </tr>
-            <tr style="height:7.3pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt">
-                        <span>该系统作为普惠的核心系统，其产品模块管理普惠多产线、跨BU的信贷产品，输出与各资金方基于不同商业策略的贷前产品的决策和属性、贷后的还款方式与核算规则等；系统的定价模块根据不同客户资质、各种维度策略，计算输出IRR；综合风险资产管理系统与本系统引擎模块根据不同资金方的要求及权重决策出放款资金方。</span>
-                    </p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>本系统为保证对公司复杂业务的快速拓展，及系统的高可用、高并发，系统采用多级分布式缓存，负载均衡，读写分离等架构保证，并根据不同业务场景，通过ESG接口、Redis、MQ方式下发各下游系统；</span>
-                    </p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>过去1年多，落地配置页面并推广业务使用，快速帮助业务在新商业策略模式下，2个月内系统成功接入38家资金方，且系统全年可用率大于99.98%；</span>
-                    </p>
-                </td>
-            </tr>
-            <tr style="height:7.3pt">
-                <td colspan="2"
-                    style="width:312.25pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-bottom:0.5pt single">
-                    <p style="text-align:justify; font-size:12pt"><span style="font-weight:bold">深圳携程网络技术有限公司</span></p>
-                </td>
-                <td
-                    style="width:191.3pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-bottom:0.5pt single">
-                    <p style="text-align:right; font-size:12pt"><span style="font-weight:bold">2015.08 –
-                            2019.08(4y)</span></p>
-                </td>
-            </tr>
-            <tr style="height:7.3pt">
-                <td
-                    style="width:251.75pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-top:0.5pt single">
-                    <p style="text-align:justify; font-size:10.5pt"><span style="color:#1f4e79">高级开发工程师</span></p>
-                </td>
-                <td colspan="2"
-                    style="width:251.8pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-top:0.5pt single">
-                    <p style="text-align:right; font-size:10.5pt"><span>国内机票Online</span></p>
-                </td>
-            </tr>
-            <tr style="height:7.3pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt"><span
-                            style="font-weight:bold; font-style:italic">高并发场景处理，架构设计，代码重构迁移及上线方案，灰度发布，ABT，前后端技术</span>
-                    </p>
-                </td>
-            </tr>
-            <tr style="height:7.3pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt"><span
-                            style="font-weight:bold">携程国内机票Online预订流程</span></p>
-                </td>
-            </tr>
-            <tr style="height:7.3pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt">
-                        <span>国内Online机票是携程主营业务之一，涵盖国内机票首页、列表页、预订页、支付页和订后订单页web客户端和服务端站点。其中列表页日均请求量2700w+，预定流程800w+。负责整体流程日常需求迭代、技术改造。</span>
-                    </p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>前后端开发，适应多语言开发（Java, C#, JS）；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>独立负责预订页增值服务产品预订模块需求迭代，与该模块的技术改造。该项目获得携程2018年年度优秀项目大奖；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>生产发布，熟悉生产发布技能，多次成功应对重大需求上线及生产问题处理；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>主导需求的AB测试及数据分析，推动产品优化；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>主人翁精神，主动协助PM完善产品需求，协调开发测试产品资源，并以更低技术成本实现产品效果；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>在团队里总结并分享知识，提出问题的解决方案。规范发布流程，协助流程的制定、落地和持续效果跟踪，使平均发布时间减少30%；</span></p>
-                </td>
-            </tr>
-            <tr style="height:7.3pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt"><span style="font-weight:bold">国内机票Online
-                            Java全面重构</span></p>
-                </td>
-            </tr>
-            <tr style="height:7.3pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt">
-                        <span>国内Online机票的搜索结果、预定流程和增值服务.NET等服务站点全面Java重构，原站点经过近10年迭代，具有业务复杂、代码冗余、功能不明确和历史遗留问题严重等特点。需要保证正常需求上线的情况下，完成日均2700w访问量的站点改造切换。</span>
-                    </p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>全程参与整体业务梳理、架构设计、技术选型和实际编码工作、质量保证；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>负责核心功能，预订页、增值服务产品预订模块的需求迭代及改造；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>采用灰度上线方式发布重构后站点，并通过内部工具及看板实时监控发布状态，保证生产零事故；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>同步汇总各开发进度给技术经理，便于把握改造进度、方案制定和及时解决障碍；</span></p>
-                </td>
-            </tr>
-            <tr style="height:16.05pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt"><span style="font-weight:bold">发现低价项目</span></p>
-                </td>
-            </tr>
-            <tr style="height:16.05pt">
-                <td style="width:251.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt"><span
-                            style="font-style:italic; color:#1f4e79">开发工程师</span></p>
-                </td>
-                <td colspan="2" style="width:251.8pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:right; font-size:10.5pt"><span>2015.08-2016.10（1年2个月）</span></p>
-                </td>
-            </tr>
-            <tr style="height:47.45pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>携程第一个聚合国内国际机票低价接口服务，为营销活动提供高并发需求服务；</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>通过优化数据库读写机制，采用Redis进行读写缓存，降低用户每次操作对DB的压力，应对微信活动推送所带来的瞬间流量高峰(大于3k
-                            QPS)，接口响应时间提高50%；</span></p>
-                </td>
-            </tr>
-            <tr style="height:32.15pt">
-                <td colspan="2"
-                    style="width:312.25pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-bottom:0.5pt single">
-                    <p style="text-align:justify; font-size:12pt"><span style="font-weight:bold">Expedia离岸研发中心</span>
-                    </p>
-                </td>
-                <td
-                    style="width:191.3pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-bottom:0.5pt single">
-                    <p style="text-align:right; font-size:12pt"><span style="font-weight:bold">2013.09 –
-                            2015.08(2y)</span></p>
-                </td>
-            </tr>
-            <tr style="height:15.3pt">
-                <td colspan="3"
-                    style="width:514.4pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-top:0.5pt single">
-                    <p style="text-align:justify; font-size:10.5pt"><span>开发工程师</span></p>
-                </td>
-            </tr>
-            <tr style="height:16.05pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt"><span
-                            style="font-weight:bold; font-style:italic">全英环境，跨国全球化协作开发，CICD流程，敏捷开发流程，Git命令的边缘使用场景</span>
-                    </p>
-                </td>
-            </tr>
-            <tr style="height:32.15pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt">
-                        <span>在8人国际研发小组中任后端工程师，负责美国、澳大利亚、新西兰站点的优惠券系统的设计与维护，以及站点相关零散的需求分析、实现与迭代交付；</span></p>
-                </td>
-            </tr>
-            <tr style="height:25.2pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:12pt"><span
-                            style="font-weight:bold; color:#1f4e79">志愿者经历</span></p>
-                </td>
-            </tr>
-            <tr style="height:22.1pt">
-                <td
-                    style="width:251.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-bottom:0.5pt single">
-                    <p style="text-align:justify; font-size:12pt"><span style="font-weight:bold">First Code
-                            Academy</span></p>
-                </td>
-                <td colspan="2"
-                    style="width:251.8pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-bottom:0.5pt single">
-                    <p style="text-align:right; font-size:12pt"><span style="font-weight:bold">2018.11 –
-                            2019.06(8M)</span></p>
-                </td>
-            </tr>
-            <tr style="height:15.3pt">
-                <td colspan="3"
-                    style="width:514.4pt; border-top-style:solid; border-top-width:0.75pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top; -aw-border-top:0.5pt single">
-                    <p style="text-align:justify; font-size:10.5pt"><span
-                            style="font-style:italic; color:#1f4e79">导师</span></p>
-                </td>
-            </tr>
-            <tr style="height:17.15pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt"><span>英语教学4-7岁小朋友Scratch编程
-                            (模块化可视编程语言)，控制机器人或APP内的动画展示逻辑。</span></p>
-                </td>
-            </tr>
-            <tr style="height:31.35pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:12pt"><span
-                            style="font-weight:bold; color:#1f4e79">专业技能</span></p>
-                </td>
-            </tr>
-            <tr style="height:98.05pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span style="font-weight:bold">AI工程能力：</span><span>Prompt Engineering, RAG
-                            Architecture</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span style="font-weight:bold">技术能力：</span><span>Java 17+, C#, JavaScript,
-                            数据库优化, 系统架构设计;</span></p>
-                    <div style="background-color:#ffffff">
-                        <p
-                            style="margin-left:21pt; text-indent:-21pt; line-height:18pt; widows:2; orphans:2; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                            <span style="-aw-import:ignore"><span
-                                    style="font-size:10.5pt; letter-spacing:0.2pt; color:#060607"><span
-                                        style="font-family:Wingdings"></span></span><span
-                                    style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                                </span></span><span
-                                style="font-size:10.5pt; font-weight:bold; letter-spacing:0.2pt; color:#060607">数据相关:
-                            </span><span style="font-size:10.5pt; letter-spacing:0.2pt; color:#060607">RDBMS (MySQL,
-                                Oracle DB), NoSQL (Redis);</span></p>
-                    </div>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span style="font-weight:bold">框架与中间件：</span><span>Spring Framework (Core,
-                            Boot, MVC), Spring Cloud, RESTful Services, Microservices Architecture, Dubbo, MyBatis,
-                            Kafka MQ, RocketMQ, Nginx;</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span style="font-weight:bold">容器化: </span><span>Docker, Kubernetes</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span style="font-weight:bold">工具/方法论: </span><span>Git, Jenkins, Maven,
-                            Agile/Scrum, DevOps practices; </span></p>
-                </td>
-            </tr>
-            <tr style="height:31.35pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:12pt"><span
-                            style="font-weight:bold; color:#1f4e79">证书奖项</span></p>
-                </td>
-            </tr>
-            <tr style="height:16.05pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:12.04pt">
-                        <span style="-aw-import:ignore"><span style="font-size:12pt; font-weight:bold"><span
-                                    style="font-family:Wingdings; font-weight:normal"></span></span><span
-                                style="width:12.04pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>PMP项目管理认证，2022.06.25</span></p>
-                </td>
-            </tr>
-            <tr style="height:32.15pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:12pt"><span
-                            style="font-weight:bold; color:#1f4e79">教育信息</span></p>
-                </td>
-            </tr>
-            <tr style="height:47.45pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:10.5pt"><span
-                            style="font-weight:bold">广东嘉应学院计算机科学与技术学院</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>软件工程专业，本科学士学位，2009 – 2013</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>粤语(母语)，国语(母语)，英语(IELTS: 6.5; CET-6)；</span></p>
-                </td>
-            </tr>
-            <tr style="height:31.35pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p style="text-align:justify; font-size:12pt"><span
-                            style="font-weight:bold; color:#1f4e79">课程学习经历</span></p>
-                </td>
-            </tr>
-            <tr style="height:31.35pt">
-                <td colspan="3" style="width:514.4pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:top">
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:13.16pt">
-                        <span style="-aw-import:ignore"><span><span style="font-family:Wingdings"></span></span><span
-                                style="width:13.16pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>商业领导力，2020.10</span></p>
-                    <p class="ListParagraph"
-                        style="margin-left:21pt; text-indent:-21pt; -aw-import:list-item; -aw-list-level-number:0; -aw-list-number-format:''; -aw-list-number-styles:'bullet'; -aw-list-padding-sml:12.04pt">
-                        <span style="-aw-import:ignore"><span style="font-size:12pt; font-weight:bold"><span
-                                    style="font-family:Wingdings; font-weight:normal"></span></span><span
-                                style="width:12.04pt; font:7pt 'Times New Roman'; display:inline-block; -aw-import:spaces">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;
-                            </span></span><span>企业经营管理（LDP+），2020.06</span></p>
-                </td>
-            </tr>
-            <tr style="height:0pt">
-                <td style="width:262.55pt"></td>
-                <td style="width:60.5pt"></td>
-                <td style="width:202.15pt"></td>
-            </tr>
-        </table>
-        <p><span style="-aw-import:ignore">&#xa0;</span></p>
-    </div>
-
-
-
-
-
-
+    <div style="text-align:center; margin-bottom:2rem;">Hello! I'm Carl.</div>
     <script>
         // 简历文本 - 动态从本地txt文件加载
-        let carlResume = ""; // 先声明变量
-        // 页面加载时读取 txt 文件
+        let carlResume = "";
         fetch('carl_llm_prompt.txt')
           .then(response => response.text())
           .then(text => {
-            carlResume = text.replace(/\n/g, " "); // 如需压缩为单行
+            carlResume = text.replace(/\n/g, " ");
           })
           .catch(err => {
             carlResume = "【简历加载失败】";
             console.error("无法加载 Carl 简历 prompt：", err);
           });
-
-        // Cloudflare Workers 代理端点
         const WORKER_URL = "https://github-ds-apikey.ahjun30.workers.dev";
-        
-        // 增强版输入验证
         function validateInput(input) {
             const lowerInput = input.toLowerCase();
             const carlKeywords = ["carl", "resume", "experience", "skills", "project", "education", "work"];
-            
-            // 检查是否包含Carl相关关键词
             const isAboutCarl = carlKeywords.some(kw => lowerInput.includes(kw));
-            
-            // 检查是否包含禁止主题关键词
             const forbiddenTopics = ["how to", "tutorial", "explain", "what is", "help me", "unrelated"];
             const isForbidden = forbiddenTopics.some(topic => lowerInput.includes(topic));
-            
             return isAboutCarl && !isForbidden;
         }
-
         async function sendMessage() {
             const inputElement = document.getElementById('user-input');
             const input = inputElement.value.trim();
             const responseContainer = document.getElementById('response');
-            
             if (!input) return;
-            
-            // 清空输入框
             inputElement.value = "";
-            
-            // 显示用户消息
             responseContainer.innerHTML += `<div class="user-msg"><strong>You:</strong> ${input}</div>`;
-            
-            // 滚动到底部
             responseContainer.scrollTop = responseContainer.scrollHeight;
-            
-            // 输入验证
             // if (!validateInput(input)) {
             //     responseContainer.innerHTML += `<div class="assistant-msg"><strong>Assistant:</strong> I can only answer questions about Carl's professional background. Please ask about his resume, skills, or experience.</div>`;
             //     responseContainer.scrollTop = responseContainer.scrollHeight;
             //     return;
             // }
-
-            // 系统提示词（强化限制）
-            const systemPrompt = `
-            ROLE: You are Carl's personal assistant.
-            RULES:
-            1. STRICTLY answer ONLY about Carl's professional background (resume, skills, experience)
-            2. REJECT ALL other topics with: "I specialize only in Carl-related topics"
-            3. USE this resume context: ${carlResume}
-            4. RESPONSE FORMAT: Concise, professional answers under 3 sentences
-            `.trim();
-
+            const systemPrompt = `\nROLE: You are Carl's personal assistant.\nRULES:\n1. STRICTLY answer ONLY about Carl's professional background (resume, skills, experience)\n2. REJECT ALL other topics with: "I specialize only in Carl-related topics"\n3. USE this resume context: ${carlResume}\n4. RESPONSE FORMAT: Concise, professional answers under 3 sentences\n`.trim();
             try {
-                // 调用 Cloudflare Workers 代理
                 const response = await fetch(WORKER_URL, {
                     method: "POST",
                     headers: {
@@ -846,32 +402,43 @@
                         temperature: 0.3,
                         max_tokens: 150
                     }),
-                    mode: 'cors' // 明确指定使用CORS模式
+                    mode: 'cors'
                 });
-
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-
                 const data = await response.json();
                 const reply = data.choices[0].message.content;
-                
-                // 显示AI回复
                 responseContainer.innerHTML += `<div class="assistant-msg"><strong>Assistant:</strong> ${reply}</div>`;
-                
-                // 滚动到底部
                 responseContainer.scrollTop = responseContainer.scrollHeight;
-                
             } catch (error) {
                 console.error("API Error:", error);
                 responseContainer.innerHTML += `<div class="assistant-msg"><strong>Error:</strong> Sorry, I'm having trouble answering right now. Please try again later.</div>`;
                 responseContainer.scrollTop = responseContainer.scrollHeight;
             }
         }
-        
-        // 支持回车键发送
         document.getElementById('user-input').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') sendMessage();
+        });
+        // 打印按钮功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const printBtn = document.createElement('button');
+            printBtn.innerHTML = '<i class="fas fa-print"></i> 打印简历';
+            printBtn.style.position = 'fixed';
+            printBtn.style.bottom = '20px';
+            printBtn.style.right = '20px';
+            printBtn.style.padding = '10px 15px';
+            printBtn.style.background = 'var(--primary)';
+            printBtn.style.color = 'white';
+            printBtn.style.border = 'none';
+            printBtn.style.borderRadius = '5px';
+            printBtn.style.cursor = 'pointer';
+            printBtn.style.zIndex = '1000';
+            printBtn.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+            printBtn.addEventListener('click', function() {
+                window.print();
+            });
+            document.body.appendChild(printBtn);
         });
     </script>
 </body>
