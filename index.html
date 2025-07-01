@@ -23,21 +23,18 @@
     <div>Hello!I'm Carl.</div>
 
     <script>
-        // 简历文本 - 替换为你的实际简历内容
-        const carlResume = `
-        Carl's Professional Resume
-        --------------------------
-        Name: 何家俊 Carl He
-        Role: Senior Backend Engineer
-        Skills: Go, Kubernetes, AWS, Distributed Systems
-        Experience: 
-          - TechLead at XYZ (2020-Present)
-          - Senior Dev at ABC (2018-2020)
-        Education: MIT Computer Science
-        Projects:
-          - Built scalable microservices architecture
-          - Implemented CI/CD pipeline for 50+ services
-        `.replace(/\n/g, " "); // 压缩为单行
+        // 简历文本 - 动态从本地txt文件加载
+        let carlResume = ""; // 先声明变量
+        // 页面加载时读取 txt 文件
+        fetch('carl_llm_prompt.txt')
+          .then(response => response.text())
+          .then(text => {
+            carlResume = text.replace(/\n/g, " "); // 如需压缩为单行
+          })
+          .catch(err => {
+            carlResume = "【简历加载失败】";
+            console.error("无法加载 Carl 简历 prompt：", err);
+          });
 
         // Cloudflare Workers 代理端点
         const WORKER_URL = "https://github-ds-apikey.ahjun30.workers.dev";
