@@ -1,3 +1,82 @@
-<p>Greetings everyone!</p>
-<p>I'm Carl He, this is my personal website.</p>
-<p>Glad to have you here!</p>
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carl's DeepSeek Assistant</title>
+    <style>
+        #chat-container { max-width: 600px; margin: auto; padding: 20px; }
+        #response { height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; }
+    </style>
+</head>
+<body>
+    <p>Greetings everyone!</p>
+    <p>I'm Carl He, this is my personal website.</p>
+    <p>Glad to have you here!</p>
+    <div id="chat-container">
+        <h1>Ask about Carl 👨💻</h1>
+        <div id="response"></div>
+        <input type="text" id="user-input" placeholder="Ask something about Carl...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        // 简历文本直接嵌入（或从外部加载）
+        const carlResume = `
+        Carl's Professional Resume
+        --------------------------
+        Name: Carl Zhang
+        Role: Senior Backend Engineer
+        Skills: Go, Kubernetes, AWS, Distributed Systems
+        Experience: 
+          - TechLead at XYZ (2020-Present)
+          - Senior Dev at ABC (2018-2020)
+        Education: MIT Computer Science
+        `.replace(/\n/g, " "); // 压缩为单行
+
+        async function sendMessage() {
+            const input = document.getElementById('user-input').value;
+            if (!input) return;
+
+            // 显示用户消息
+            document.getElementById('response').innerHTML += 
+                `<p><strong>You:</strong> ${input}</p>`;
+
+            // 系统提示词 + 简历上下文
+            const systemPrompt = `
+            You are Carl's personal assistant. Follow these rules:
+            1. ONLY answer questions about Carl (his resume, skills, experience)
+            2. Reject ALL other topics with: "I only discuss Carl-related topics"
+            3. Use this resume context: ${carlResume}
+            `.trim();
+
+            try {
+                const response = await fetch("https://api.deepseek.com/v1/chat/completions", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": "Bearer YOUR_DEEPSEEK_API_KEY"  // 替换为你的API密钥
+                    },
+                    body: JSON.stringify({
+                        model: "deepseek-chat",
+                        messages: [
+                            { role: "system", content: systemPrompt },
+                            { role: "user", content: input }
+                        ],
+                        temperature: 0.3
+                    })
+                });
+
+                const data = await response.json();
+                const reply = data.choices[0].message.content;
+                
+                // 显示AI回复
+                document.getElementById('response').innerHTML += 
+                    `<p><strong>Assistant:</strong> ${reply}</p>`;
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+    </script>
+</body>
+</html>
+
