@@ -105,7 +105,8 @@
                         ],
                         temperature: 0.3,
                         max_tokens: 150
-                    })
+                    }),
+                    mode: 'cors' // 明确指定使用CORS模式
                 });
 
                 if (!response.ok) {
