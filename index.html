@@ -27,7 +27,7 @@
         const carlResume = `
         Carl's Professional Resume
         --------------------------
-        Name: Carl Zhang
+        Name: 何家俊 Carl He
         Role: Senior Backend Engineer
         Skills: Go, Kubernetes, AWS, Distributed Systems
         Experience: 
@@ -74,11 +74,11 @@
             responseContainer.scrollTop = responseContainer.scrollHeight;
             
             // 输入验证
-            if (!validateInput(input)) {
-                responseContainer.innerHTML += `<div class="assistant-msg"><strong>Assistant:</strong> I can only answer questions about Carl's professional background. Please ask about his resume, skills, or experience.</div>`;
-                responseContainer.scrollTop = responseContainer.scrollHeight;
-                return;
-            }
+            // if (!validateInput(input)) {
+            //     responseContainer.innerHTML += `<div class="assistant-msg"><strong>Assistant:</strong> I can only answer questions about Carl's professional background. Please ask about his resume, skills, or experience.</div>`;
+            //     responseContainer.scrollTop = responseContainer.scrollHeight;
+            //     return;
+            // }
 
             // 系统提示词（强化限制）
             const systemPrompt = `
