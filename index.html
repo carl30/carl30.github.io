@@ -336,33 +336,16 @@
             }
         }
         
-        .decorative-shape {
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: rgba(52, 152, 219, 0.1);
-            z-index: 1;
-        }
-        
+        .decorative-shape,
         .decorative-shape-2 {
-            position: absolute;
-            bottom: -70px;
-            left: -70px;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: rgba(231, 76, 60, 0.08);
-            z-index: 1;
+            display: none !important;
         }
         
         /* Language Toggle Styles */
         .language-toggle {
             position: fixed;
             top: 20px;
-            right: 420px;
+            right: 30px;
             display: flex;
             gap: 5px;
             z-index: 1001;
@@ -419,21 +402,109 @@
                 padding: 20px;
             }
             
+            .header-content {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 20px;
+            }
             .profile-img {
-                width: 80px;
-                height: 80px;
+                width: 60px !important;
+                height: 60px !important;
+                margin: 0 !important;
+                float: none !important;
+                display: block !important;
             }
-            
-            .profile-img i {
-                font-size: 40px;
+            .header-text {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
-            
-            .section-content {
-                font-size: 0.9rem;
+            .name {
+                font-size: 1.3rem !important;
+                font-weight: 700;
+                color: black;
+                text-align: left;
+                margin-bottom: 2px;
+                letter-spacing: 1px;
             }
-            
+            .title {
+                font-size: 1rem !important;
+                font-weight: 300;
+                color: black;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+            .contact-info {
+                display: flex;
+                flex-wrap: wrap;
+                color: black;
+                gap: 10px;
+                margin-top: 5px;
+                justify-content: flex-start;
+                text-align: left;
+                font-size: 0.85rem !important;
+            }
+            .contact-item {
+                display: flex;
+                align-items: center;
+                font-size: 0.85rem !important;
+                text-align: left;
+            }
+            .contact-item a, .contact-item span {
+                font-size: 0.85rem !important;
+                text-align: left;
+            }
             .language-toggle {
                 display: none;
+            }
+            .chat-widget, #reopenChatBtn {
+                display: none !important;
+            }
+            button#printBtn {
+                display: none !important;
+            }
+            /* 只打印当前展示的简历内容 */
+            .resume-content {
+                display: none !important;
+            }
+            .resume-content.printing {
+                display: block !important;
+            }
+            /* LinkedIn 链接打印时显示真实 URL */
+            .contact-item a[href*="linkedin"]::after {
+                content: " (" attr(href) ")";
+                color: #333;
+                font-size: 0.95em;
+                word-break: break-all;
+            }
+            /* 打印时在LinkedIn下方新增一行GitHub主页 */
+            .contact-item.github-print-only {
+                display: none;
+            }
+            @media print {
+                .contact-item.github-print-only {
+                    display: flex !important;
+                    align-items: center;
+                    gap: 6px;
+                    font-size: 0.95em;
+                    color: #24292f;
+                    font-family: inherit;
+                    font-weight: 500;
+                    margin-top: 2px;
+                }
+                .contact-item.github-print-only .fa-github {
+                    font-size: 1.1em;
+                    margin-right: 6px;
+                    color: #24292f;
+                }
+                .contact-item.github-print-only a {
+                    color: #24292f !important;
+                    text-decoration: underline !important;
+                    font-weight: 500;
+                    font-family: inherit;
+                }
             }
         }
         /* resume style end */
@@ -659,6 +730,10 @@
                                 <a href="https://www.linkedin.com/in/carlhe30/?locale=zh_CN" target="_blank" style="display:inline-flex;align-items:center;color:#0077b5;text-decoration:none;font-weight:500;">
                                     <i class="fab fa-linkedin" style="font-size:1.1em;margin-right:6px;"></i>LinkedIn
                                 </a>
+                            </div>
+                            <div class="contact-item github-print-only" style="display:none;">
+                                <i class="fab fa-github"></i>
+                                <a href="https://carl30.github.io/" target="_blank">carl30 @https://carl30.github.io/</a>
                             </div>
                         </div>
                     </div>
@@ -1005,6 +1080,10 @@
                                 <a href="https://www.linkedin.com/in/carlhe30/" target="_blank" style="display:inline-flex;align-items:center;color:#0077b5;text-decoration:none;font-weight:500;">
                                     <i class="fab fa-linkedin" style="font-size:1.1em;margin-right:6px;"></i>LinkedIn
                                 </a>
+                            </div>
+                            <div class="contact-item github-print-only" style="display:none;">
+                                <i class="fab fa-github"></i>
+                                <a href="https://carl30.github.io/" target="_blank">carl30 @https://carl30.github.io/</a>
                             </div>
                         </div>
                     </div>
@@ -1361,12 +1440,32 @@
                 });
             });
             
+            // 打印前后只显示当前语言内容
+            function setPrintingResume() {
+                const zhResume = document.getElementById('zh-resume');
+                const enResume = document.getElementById('en-resume');
+                if (zhResume.style.display !== 'none') {
+                    zhResume.classList.add('printing');
+                    enResume.classList.remove('printing');
+                } else {
+                    enResume.classList.add('printing');
+                    zhResume.classList.remove('printing');
+                }
+            }
+            function clearPrintingResume() {
+                document.getElementById('zh-resume').classList.remove('printing');
+                document.getElementById('en-resume').classList.remove('printing');
+            }
+            window.addEventListener('beforeprint', setPrintingResume);
+            window.addEventListener('afterprint', clearPrintingResume);
+            
             // 添加打印按钮功能
             const printBtn = document.createElement('button');
+            printBtn.id = 'printBtn';
             printBtn.innerHTML = '<i class="fas fa-print"></i> 打印简历';
             printBtn.style.position = 'fixed';
             printBtn.style.bottom = '20px';
-            printBtn.style.left = '20px';
+            printBtn.style.left = '30px';
             printBtn.style.padding = '10px 15px';
             printBtn.style.background = 'var(--primary)';
             printBtn.style.color = 'white';
@@ -1375,11 +1474,9 @@
             printBtn.style.cursor = 'pointer';
             printBtn.style.zIndex = '1000';
             printBtn.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
-            
             printBtn.addEventListener('click', function() {
                 window.print();
             });
-            
             document.body.appendChild(printBtn);
         });
 
