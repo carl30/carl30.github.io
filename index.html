@@ -1002,7 +1002,49 @@
         closeBtn.addEventListener('click', () => {
             chatWidget.style.display = 'none';
             // Optionally, show a button to reopen the chat
+            showReopenButton();
         });
+        
+        // 显示重新打开聊天窗口的按钮
+        function showReopenButton() {
+            // 检查是否已经存在重新打开按钮
+            if (document.getElementById('reopenChatBtn')) return;
+            
+            const reopenBtn = document.createElement('button');
+            reopenBtn.id = 'reopenChatBtn';
+            reopenBtn.innerHTML = '<i class="fas fa-comments"></i> Carl\'s Assistant';
+            reopenBtn.style.position = 'fixed';
+            reopenBtn.style.bottom = '30px';
+            reopenBtn.style.right = '30px';
+            reopenBtn.style.padding = '12px 20px';
+            reopenBtn.style.background = 'var(--accent)';
+            reopenBtn.style.color = 'white';
+            reopenBtn.style.border = 'none';
+            reopenBtn.style.borderRadius = '25px';
+            reopenBtn.style.cursor = 'pointer';
+            reopenBtn.style.zIndex = '1000';
+            reopenBtn.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+            reopenBtn.style.fontSize = '14px';
+            reopenBtn.style.fontWeight = '500';
+            reopenBtn.style.transition = 'all 0.3s ease';
+            
+            reopenBtn.addEventListener('mouseenter', () => {
+                reopenBtn.style.transform = 'translateY(-2px)';
+                reopenBtn.style.boxShadow = '0 6px 20px rgba(0,0,0,0.3)';
+            });
+            
+            reopenBtn.addEventListener('mouseleave', () => {
+                reopenBtn.style.transform = 'translateY(0)';
+                reopenBtn.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+            });
+            
+            reopenBtn.addEventListener('click', () => {
+                chatWidget.style.display = 'flex';
+                reopenBtn.remove();
+            });
+            
+            document.body.appendChild(reopenBtn);
+        }
         
         // Send message function
         async function sendMessage() {
