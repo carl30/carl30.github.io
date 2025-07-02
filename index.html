@@ -358,6 +358,50 @@
             z-index: 1;
         }
         
+        /* Language Toggle Styles */
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 420px;
+            display: flex;
+            gap: 5px;
+            z-index: 1001;
+            background: white;
+            padding: 8px;
+            border-radius: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .lang-btn {
+            padding: 8px 16px;
+            border: 2px solid var(--primary);
+            background: white;
+            color: var(--primary);
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .resume-content {
+            display: block;
+        }
+        
+        .resume-content.hidden {
+            display: none;
+        }
+        
         /* Print Styles */
         @media print {
             body {
@@ -386,6 +430,10 @@
             
             .section-content {
                 font-size: 0.9rem;
+            }
+            
+            .language-toggle {
+                display: none;
             }
         }
         /* resume style end */
@@ -568,348 +616,702 @@
                 bottom: 20px;
                 border-radius: 8px;
             }
+            
+            .language-toggle {
+                right: 20px;
+                top: 10px;
+            }
         }
         /* llm style end */
     </style>
 </head>
 <body>
     <div class="resume-container">
-        <!-- Header Section -->
-        <header class="resume-header">
-            <div class="decorative-shape"></div>
-            <div class="decorative-shape-2"></div>
-            <div class="header-content">
-                <div class="profile-img">
-                    <img src="images/portraits.jpeg" alt="Carl头像" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
-                </div>
-                <div class="header-text">
-                    <h1 class="name">何家俊 Carl</h1>
-                    <div class="title">资深开发工程师</div>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>185 0303 6612</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>ahjun30@hotmail.com</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+        <!-- Language Toggle Buttons -->
+        <div class="language-toggle">
+            <button class="lang-btn active" data-lang="zh">中文</button>
+            <button class="lang-btn" data-lang="en">English</button>
+        </div>
 
-        <!-- Summary Section -->
-        <section class="resume-section">
-            <h2 class="section-title">
-                <i class="fas fa-user"></i>个人简介
-            </h2>
-            <div class="section-content">
-                <p>10年企业级软件研发经验，具备小团队管理经验。专注于企业级解决方案的架构、实施和支持，具备出色的DevOps实践能力，熟悉敏捷开发流程，对软件工程的优雅和效率充满热情。</p>
-                <p>擅长将技术专长与业务需求相结合，致力于通过创新解决方案提升客户体验和产品价值。具备优秀的沟通能力和团队合作精神，能够理解并引导客户需求，提供定制化的技术解决方案。</p>
-            </div>
-        </section>
-
-        <!-- Experience Section - 完整保留所有经历 -->
-        <section class="resume-section">
-            <h2 class="section-title">
-                <i class="fas fa-briefcase"></i>工作及项目经验
-            </h2>
-            <div class="section-content">
-                <!-- 个人AI项目 -->
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="company">个人AI项目独立开发者</div>
-                        <div class="period">2025.04-Current</div>
+        <!-- Chinese Resume Content -->
+        <div class="resume-content" id="zh-resume">
+            <!-- Header Section -->
+            <header class="resume-header">
+                <div class="decorative-shape"></div>
+                <div class="decorative-shape-2"></div>
+                <div class="header-content">
+                    <div class="profile-img">
+                        <img src="images/portraits.jpeg" alt="Carl头像" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
                     </div>
-                    <div class="position">全栈开发工程师（AI方向） | 自研项目</div>
-                    
-                    <div class="project-title">技术升级计划</div>
-                    <ul class="achievements">
-                        <li>系统性研究大语言模型工程化应用（Claude 3.7），聚焦教育场景的AI能力集成</li>
-                    </ul>
-                    
-                    <div class="project-title">全栈项目开发</div>
-                    <ul class="achievements">
-                        <li>独立完成AI教育小程序的架构设计、开发部署及运维，技术栈：Java 17 + Spring Boot/ Uni-app / Milvus / Redis</li>
-                        <li>设计教科书知识点结构化处理Pipeline：上传题库/知识点→文本向量化（text-embedding-ada-002）→Milvus向量库构建</li>
-                        <li>构建语义检索链：用户问题→向量化检索→关联知识点→Claude 3.7生成式回答</li>
-                        <li>运用Claude 3.7 Builder加速项目编码，构建Prompt Engineering规范，设计AI生成代码质量评估体系</li>
-                    </ul>
-                </div>
-                
-                <!-- 深圳希音 -->
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="company">深圳希音信息技术有限公司</div>
-                        <div class="period">2023.06 -- 2025.03 (1年9个月)</div>
-                    </div>
-                    <div class="position">资深开发工程师</div>
-                    
-                    <div class="project-title">可视页面配置化系统，AIGC能力</div>
-                    <ul class="achievements">
-                        <li>开发并维护了高度可配置的后台系统，支持首页、列表页和商品详情页等页面组件通过可视化界面进行配置</li>
-                        <li>系统成功拓展应用于平台化店铺装修，满足合规要求，通过跨物理中心存储数据，确保合法性</li>
-                    </ul>
-                    
-                    <div class="project-title">智能客服</div>
-                    <ul class="achievements">
-                        <li>使用AI实现智能客服，担任跨部门协作领导者，协调产品、前端、后端及测试团队</li>
-                        <li>推动文档标准化处理和问题解决流程自动化</li>
-                        <li>探讨向量数据库、token、chunking等技术，实施embeddings和prompt tuning</li>
-                        <li>智能客服上线半年内，问题解决率达到33%（无反馈计入未解决）</li>
-                    </ul>
-                    
-                    <div class="project-title">比价系统（全球运营中心）</div>
-                    <ul class="achievements">
-                        <li>针对多个不同竞对平台的售价采购数据，整合为6大类十几小类策略的采购链路</li>
-                        <li>汇聚成可比价数据，接入AI算法自动判断是否可比价；提供审批和质检功能</li>
-                        <li>深度理解并运用消息中间件技术，确保系统间高效、准确通信</li>
-                    </ul>
-                    
-                    <div class="project-title">日常运维</div>
-                    <ul class="achievements">
-                        <li>负责生产环境的快速问题定位和解决，确保系统高效稳定运行</li>
-                        <li>实施服务器、中间件和数据库的压力监控及动态调配，保证系统高可用性</li>
-                    </ul>
-                </div>
-                
-                <!-- 顺丰科技 -->
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="company">顺丰科技有限公司</div>
-                        <div class="period">2021.05 -- 2023.02 (1年10个月)</div>
-                    </div>
-                    <div class="position">后端开发高级工程师 | 末端渠道中心小哥产品研发部</div>
-                    
-                    <div class="project-title">新实时评价系统</div>
-                    <ul class="achievements">
-                        <li>把顺丰集团管理与运营快递小哥的目标以数字化形式管理，涵盖客评、客诉、时效履约、风险管控、运营活动、新员工课程等模块</li>
-                        <li>兼容T-1与未来实时数据源，基于快速处理实时数据设计和搭建新系统</li>
-                        <li>高度配置化系统实现，支持多维度配置系统功能</li>
-                        <li>实现可配置化概率、有系统崩溃恢复机制的抽奖系统</li>
-                        <li>实现并列排行榜，计算超越人数百分比</li>
-                        <li>实现二级缓存工具类</li>
-                        <li>梳理并整合申诉模块在特区版、全国版和融合版的评价数据</li>
-                        <li>新系统推广全网37w+小哥，覆盖率97%</li>
-                        <li>16个城市服务分关联计提，涉及10w+小哥，超过9w次小哥实现收入增加，平均每人增加670元</li>
-                        <li>线上运营活动全年累积14场，超过25w人参与</li>
-                        <li>活动配置平台共39个地区使用，使用率86%，22年Q4地区自主创建活动数40+</li>
-                        <li>获得末端渠道中心五星员工，2022.08</li>
-                    </ul>
-                </div>
-                
-                <!-- 平安普惠 -->
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="company">平安普惠企业管理有限公司</div>
-                        <div class="period">2019.08 -- 2021.04 (1年9个月)</div>
-                    </div>
-                    <div class="position">资深开发工程师、产品模块负责人 | 产品平台研发组</div>
-                    
-                    <div class="project-title">风险资产管理系统</div>
-                    <ul class="achievements">
-                        <li>通过风控因素及统计规则满足资金方风险率要求，修正参数把控资金风险并提升贷款产品收益</li>
-                        <li>管理4人小组，负责系统设计、技术选型，管控质量及发布部署</li>
-                        <li>利用多系统解耦功能，通过缓存、线程池、RocketMQ，数据库读写分离等技术实现系统</li>
-                        <li>系统上线后过去一年利润收益增加28%，系统日均请求量400w+</li>
-                    </ul>
-                    
-                    <div class="project-title">平安普惠信贷产品管理系统</div>
-                    <ul class="achievements">
-                        <li>核心系统管理普惠多产线、跨BU的信贷产品，输出贷前产品决策和属性、贷后还款方式与核算规则</li>
-                        <li>定价模块根据不同客户资质、维度策略计算输出IRR</li>
-                        <li>采用多级分布式缓存、负载均衡、读写分离等架构保证高可用、高并发</li>
-                        <li>落地配置页面并推广业务使用，2个月内成功接入38家资金方，系统全年可用率大于99.98%</li>
-                    </ul>
-                </div>
-                
-                <!-- 深圳携程 -->
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="company">深圳携程网络技术有限公司</div>
-                        <div class="period">2015.08 -- 2019.08 (4年)</div>
-                    </div>
-                    <div class="position">高级开发工程师 | 国内机票Online</div>
-                    
-                    <div class="project-title">携程国内机票Online预订流程</div>
-                    <ul class="achievements">
-                        <li>负责国内机票首页、列表页、预订页、支付页和订单页的日常需求迭代、技术改造</li>
-                        <li>列表页日均请求量2700w+，预定流程800w+</li>
-                        <li>前后端开发，适应多语言开发（Java, C#, JS）</li>
-                        <li>独立负责预订页增值服务产品预订模块需求迭代及技术改造，获携程2018年年度优秀项目大奖</li>
-                        <li>生产发布，多次成功应对重大需求上线及生产问题处理</li>
-                        <li>主导需求AB测试及数据分析，推动产品优化</li>
-                        <li>主动协助PM完善产品需求，协调开发测试产品资源，以更低技术成本实现产品效果</li>
-                        <li>在团队里总结分享知识，规范发布流程，使平均发布时间减少30%</li>
-                    </ul>
-                    
-                    <div class="project-title">国内机票Online Java全面重构</div>
-                    <ul class="achievements">
-                        <li>参与整体业务梳理、架构设计、技术选型和实际编码工作、质量保证</li>
-                        <li>负责核心功能，预订页、增值服务产品预订模块的需求迭代及改造</li>
-                        <li>采用灰度上线方式发布重构后站点，实时监控发布状态，保证生产零事故</li>
-                        <li>同步汇总各开发进度给技术经理，把握改造进度、方案制定和及时解决障碍</li>
-                    </ul>
-                    
-                    <div class="project-title">发现低价项目</div>
-                    <ul class="achievements">
-                        <li>开发携程第一个聚合国内国际机票低价接口服务，为营销活动提供高并发需求服务</li>
-                        <li>通过优化数据库读写机制，采用Redis进行读写缓存，降低DB压力</li>
-                        <li>应对微信活动推送所带来的瞬间流量高峰(大于3k QPS)，接口响应时间提高50%</li>
-                    </ul>
-                </div>
-                
-                <!-- Expedia -->
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="company">Expedia离岸研发中心</div>
-                        <div class="period">2013.09 -- 2015.08 (2年)</div>
-                    </div>
-                    <div class="position">开发工程师</div>
-                    
-                    <ul class="achievements">
-                        <li>在8人国际研发小组中任后端工程师，负责美国、澳大利亚、新西兰站点的优惠券系统设计与维护</li>
-                        <li>负责站点相关零散的需求分析、实现与迭代交付</li>
-                        <li>全英环境，跨国全球化协作开发，CICD流程，敏捷开发流程，Git命令的边缘使用场景</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section - 优化为更紧凑样式 -->
-        <section class="resume-section">
-            <h2 class="section-title">
-                <i class="fas fa-code"></i>专业技能
-            </h2>
-            <div class="section-content">
-                <div class="skills-container">
-                    <div class="skill-category">
-                        <div class="skill-title">AI工程能力</div>
-                        <div class="skill-items">
-                            <div class="skill-tag">Prompt Engineering</div>
-                            <div class="skill-tag">RAG Architecture</div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <div class="skill-title">技术能力</div>
-                        <div class="skill-items">
-                            <div class="skill-tag">Java 17+</div>
-                            <div class="skill-tag">C#</div>
-                            <div class="skill-tag">JavaScript</div>
-                            <div class="skill-tag">数据库优化</div>
-                            <div class="skill-tag">系统架构设计</div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <div class="skill-title">数据相关</div>
-                        <div class="skill-items">
-                            <div class="skill-tag">MySQL</div>
-                            <div class="skill-tag">Oracle DB</div>
-                            <div class="skill-tag">Redis</div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <div class="skill-title">框架与中间件</div>
-                        <div class="skill-items">
-                            <div class="skill-tag">Spring Framework</div>
-                            <div class="skill-tag">Spring Boot</div>
-                            <div class="skill-tag">Spring MVC</div>
-                            <div class="skill-tag">Spring Cloud</div>
-                            <div class="skill-tag">RESTful</div>
-                            <div class="skill-tag">Microservices</div>
-                            <div class="skill-tag">Dubbo</div>
-                            <div class="skill-tag">MyBatis</div>
-                            <div class="skill-tag">Kafka MQ</div>
-                            <div class="skill-tag">RocketMQ</div>
-                            <div class="skill-tag">Nginx</div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <div class="skill-title">容器化</div>
-                        <div class="skill-items">
-                            <div class="skill-tag">Docker</div>
-                            <div class="skill-tag">Kubernetes</div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <div class="skill-title">工具/方法论</div>
-                        <div class="skill-items">
-                            <div class="skill-tag">Git</div>
-                            <div class="skill-tag">Jenkins</div>
-                            <div class="skill-tag">Maven</div>
-                            <div class="skill-tag">Agile/Scrum</div>
-                            <div class="skill-tag">DevOps</div>
+                    <div class="header-text">
+                        <h1 class="name">何家俊 Carl</h1>
+                        <div class="title">资深开发工程师</div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>185 0303 6612</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>ahjun30@hotmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <a href="https://www.linkedin.com/in/carlhe30/?locale=zh_CN" target="_blank" style="display:inline-flex;align-items:center;color:#0077b5;text-decoration:none;font-weight:500;">
+                                    <i class="fab fa-linkedin" style="font-size:1.1em;margin-right:6px;"></i>LinkedIn
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </header>
 
-        <!-- Volunteer Section -->
-        <section class="resume-section">
-            <h2 class="section-title">
-                <i class="fas fa-hands-helping"></i>志愿者经历
-            </h2>
-            <div class="section-content">
-                <div class="volunteer-item">
-                    <div class="volunteer-header">
-                        <div class="volunteer-org">First Code Academy</div>
-                        <div class="period">2018.11 -- 2019.06 (8个月)</div>
+            <!-- Summary Section -->
+            <section class="resume-section">
+                <h2 class="section-title">
+                    <i class="fas fa-user"></i>个人简介
+                </h2>
+                <div class="section-content">
+                    <p>10年企业级软件研发经验，具备小团队管理经验。专注于企业级解决方案的架构、实施和支持，具备出色的DevOps实践能力，熟悉敏捷开发流程，对软件工程的优雅和效率充满热情。</p>
+                    <p>擅长将技术专长与业务需求相结合，致力于通过创新解决方案提升客户体验和产品价值。具备优秀的沟通能力和团队合作精神，能够理解并引导客户需求，提供定制化的技术解决方案。</p>
+                </div>
+            </section>
+
+            <!-- Experience Section - 完整保留所有经历 -->
+            <section class="resume-section">
+                <h2 class="section-title">
+                    <i class="fas fa-briefcase"></i>工作及项目经验
+                </h2>
+                <div class="section-content">
+                    <!-- 个人AI项目 -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company">个人AI项目独立开发者</div>
+                            <div class="period">2025.04-Current</div>
+                        </div>
+                        <div class="position">全栈开发工程师（AI方向） | 自研项目</div>
+                        
+                        <div class="project-title">技术升级计划</div>
+                        <ul class="achievements">
+                            <li>系统性研究大语言模型工程化应用（Claude 3.7），聚焦教育场景的AI能力集成</li>
+                        </ul>
+                        
+                        <div class="project-title">全栈项目开发</div>
+                        <ul class="achievements">
+                            <li>独立完成AI教育小程序的架构设计、开发部署及运维，技术栈：Java 17 + Spring Boot/ Uni-app / Milvus / Redis</li>
+                            <li>设计教科书知识点结构化处理Pipeline：上传题库/知识点→文本向量化（text-embedding-ada-002）→Milvus向量库构建</li>
+                            <li>构建语义检索链：用户问题→向量化检索→关联知识点→Claude 3.7生成式回答</li>
+                            <li>运用Claude 3.7 Builder加速项目编码，构建Prompt Engineering规范，设计AI生成代码质量评估体系</li>
+                        </ul>
                     </div>
-                    <div class="volunteer-role">导师</div>
+                    
+                    <!-- 深圳希音 -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company">深圳希音信息技术有限公司</div>
+                            <div class="period">2023.06 -- 2025.03 (1年9个月)</div>
+                        </div>
+                        <div class="position">资深开发工程师</div>
+                        
+                        <div class="project-title">可视页面配置化系统，AIGC能力</div>
+                        <ul class="achievements">
+                            <li>开发并维护了高度可配置的后台系统，支持首页、列表页和商品详情页等页面组件通过可视化界面进行配置</li>
+                            <li>系统成功拓展应用于平台化店铺装修，满足合规要求，通过跨物理中心存储数据，确保合法性</li>
+                        </ul>
+                        
+                        <div class="project-title">智能客服</div>
+                        <ul class="achievements">
+                            <li>使用AI实现智能客服，担任跨部门协作领导者，协调产品、前端、后端及测试团队</li>
+                            <li>推动文档标准化处理和问题解决流程自动化</li>
+                            <li>探讨向量数据库、token、chunking等技术，实施embeddings和prompt tuning</li>
+                            <li>智能客服上线半年内，问题解决率达到33%（无反馈计入未解决）</li>
+                        </ul>
+                        
+                        <div class="project-title">比价系统（全球运营中心）</div>
+                        <ul class="achievements">
+                            <li>针对多个不同竞对平台的售价采购数据，整合为6大类十几小类策略的采购链路</li>
+                            <li>汇聚成可比价数据，接入AI算法自动判断是否可比价；提供审批和质检功能</li>
+                            <li>深度理解并运用消息中间件技术，确保系统间高效、准确通信</li>
+                        </ul>
+                        
+                        <div class="project-title">日常运维</div>
+                        <ul class="achievements">
+                            <li>负责生产环境的快速问题定位和解决，确保系统高效稳定运行</li>
+                            <li>实施服务器、中间件和数据库的压力监控及动态调配，保证系统高可用性</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 顺丰科技 -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company">顺丰科技有限公司</div>
+                            <div class="period">2021.05 -- 2023.02 (1年10个月)</div>
+                        </div>
+                        <div class="position">后端开发高级工程师 | 末端渠道中心小哥产品研发部</div>
+                        
+                        <div class="project-title">新实时评价系统</div>
+                        <ul class="achievements">
+                            <li>把顺丰集团管理与运营快递小哥的目标以数字化形式管理，涵盖客评、客诉、时效履约、风险管控、运营活动、新员工课程等模块</li>
+                            <li>兼容T-1与未来实时数据源，基于快速处理实时数据设计和搭建新系统</li>
+                            <li>高度配置化系统实现，支持多维度配置系统功能</li>
+                            <li>实现可配置化概率、有系统崩溃恢复机制的抽奖系统</li>
+                            <li>实现并列排行榜，计算超越人数百分比</li>
+                            <li>实现二级缓存工具类</li>
+                            <li>梳理并整合申诉模块在特区版、全国版和融合版的评价数据</li>
+                            <li>新系统推广全网37w+小哥，覆盖率97%</li>
+                            <li>16个城市服务分关联计提，涉及10w+小哥，超过9w次小哥实现收入增加，平均每人增加670元</li>
+                            <li>线上运营活动全年累积14场，超过25w人参与</li>
+                            <li>活动配置平台共39个地区使用，使用率86%，22年Q4地区自主创建活动数40+</li>
+                            <li>获得末端渠道中心五星员工，2022.08</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 平安普惠 -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company">平安普惠企业管理有限公司</div>
+                            <div class="period">2019.08 -- 2021.04 (1年9个月)</div>
+                        </div>
+                        <div class="position">资深开发工程师、产品模块负责人 | 产品平台研发组</div>
+                        
+                        <div class="project-title">风险资产管理系统</div>
+                        <ul class="achievements">
+                            <li>通过风控因素及统计规则满足资金方风险率要求，修正参数把控资金风险并提升贷款产品收益</li>
+                            <li>管理4人小组，负责系统设计、技术选型，管控质量及发布部署</li>
+                            <li>利用多系统解耦功能，通过缓存、线程池、RocketMQ，数据库读写分离等技术实现系统</li>
+                            <li>系统上线后过去一年利润收益增加28%，系统日均请求量400w+</li>
+                        </ul>
+                        
+                        <div class="project-title">平安普惠信贷产品管理系统</div>
+                        <ul class="achievements">
+                            <li>核心系统管理普惠多产线、跨BU的信贷产品，输出贷前产品决策和属性、贷后还款方式与核算规则</li>
+                            <li>定价模块根据不同客户资质、维度策略计算输出IRR</li>
+                            <li>采用多级分布式缓存、负载均衡、读写分离等架构保证高可用、高并发</li>
+                            <li>落地配置页面并推广业务使用，2个月内成功接入38家资金方，系统全年可用率大于99.98%</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 深圳携程 -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company">深圳携程网络技术有限公司</div>
+                            <div class="period">2015.08 -- 2019.08 (4年)</div>
+                        </div>
+                        <div class="position">高级开发工程师 | 国内机票Online</div>
+                        
+                        <div class="project-title">携程国内机票Online预订流程</div>
+                        <ul class="achievements">
+                            <li>负责国内机票首页、列表页、预订页、支付页和订单页的日常需求迭代、技术改造</li>
+                            <li>列表页日均请求量2700w+，预定流程800w+</li>
+                            <li>前后端开发，适应多语言开发（Java, C#, JS）</li>
+                            <li>独立负责预订页增值服务产品预订模块需求迭代及技术改造，获携程2018年年度优秀项目大奖</li>
+                            <li>生产发布，多次成功应对重大需求上线及生产问题处理</li>
+                            <li>主导需求AB测试及数据分析，推动产品优化</li>
+                            <li>主动协助PM完善产品需求，协调开发测试产品资源，以更低技术成本实现产品效果</li>
+                            <li>在团队里总结分享知识，规范发布流程，使平均发布时间减少30%</li>
+                        </ul>
+                        
+                        <div class="project-title">国内机票Online Java全面重构</div>
+                        <ul class="achievements">
+                            <li>参与整体业务梳理、架构设计、技术选型和实际编码工作、质量保证</li>
+                            <li>负责核心功能，预订页、增值服务产品预订模块的需求迭代及改造</li>
+                            <li>采用灰度上线方式发布重构后站点，实时监控发布状态，保证生产零事故</li>
+                            <li>同步汇总各开发进度给技术经理，把握改造进度、方案制定和及时解决障碍</li>
+                        </ul>
+                        
+                        <div class="project-title">发现低价项目</div>
+                        <ul class="achievements">
+                            <li>开发携程第一个聚合国内国际机票低价接口服务，为营销活动提供高并发需求服务</li>
+                            <li>通过优化数据库读写机制，采用Redis进行读写缓存，降低DB压力</li>
+                            <li>应对微信活动推送所带来的瞬间流量高峰(大于3k QPS)，接口响应时间提高50%</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Expedia -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company">Expedia离岸研发中心</div>
+                            <div class="period">2013.09 -- 2015.08 (2年)</div>
+                        </div>
+                        <div class="position">开发工程师</div>
+                        
+                        <ul class="achievements">
+                            <li>在8人国际研发小组中任后端工程师，负责美国、澳大利亚、新西兰站点的优惠券系统设计与维护</li>
+                            <li>负责站点相关零散的需求分析、实现与迭代交付</li>
+                            <li>全英环境，跨国全球化协作开发，CICD流程，敏捷开发流程，Git命令的边缘使用场景</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section - 优化为更紧凑样式 -->
+            <section class="resume-section">
+                <h2 class="section-title">
+                    <i class="fas fa-code"></i>专业技能
+                </h2>
+                <div class="section-content">
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <div class="skill-title">AI工程能力</div>
+                            <div class="skill-items">
+                                <div class="skill-tag">Prompt Engineering</div>
+                                <div class="skill-tag">RAG Architecture</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="skill-title">技术能力</div>
+                            <div class="skill-items">
+                                <div class="skill-tag">Java 17+</div>
+                                <div class="skill-tag">C#</div>
+                                <div class="skill-tag">Python</div>
+                                <div class="skill-tag">JavaScript</div>
+                                <div class="skill-tag">数据库优化</div>
+                                <div class="skill-tag">系统架构设计</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="skill-title">数据相关</div>
+                            <div class="skill-items">
+                                <div class="skill-tag">MySQL</div>
+                                <div class="skill-tag">Oracle DB</div>
+                                <div class="skill-tag">Redis</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="skill-title">框架与中间件</div>
+                            <div class="skill-items">
+                                <div class="skill-tag">Spring Framework</div>
+                                <div class="skill-tag">Spring Boot</div>
+                                <div class="skill-tag">Spring MVC</div>
+                                <div class="skill-tag">Spring Cloud</div>
+                                <div class="skill-tag">RESTful</div>
+                                <div class="skill-tag">Microservices</div>
+                                <div class="skill-tag">Dubbo</div>
+                                <div class="skill-tag">MyBatis</div>
+                                <div class="skill-tag">Kafka MQ</div>
+                                <div class="skill-tag">RocketMQ</div>
+                                <div class="skill-tag">Nginx</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="skill-title">容器化</div>
+                            <div class="skill-items">
+                                <div class="skill-tag">Docker</div>
+                                <div class="skill-tag">Kubernetes</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="skill-title">工具/方法论</div>
+                            <div class="skill-items">
+                                <div class="skill-tag">Git</div>
+                                <div class="skill-tag">Jenkins</div>
+                                <div class="skill-tag">Maven</div>
+                                <div class="skill-tag">Agile/Scrum</div>
+                                <div class="skill-tag">DevOps</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Volunteer Section -->
+            <section class="resume-section">
+                <h2 class="section-title">
+                    <i class="fas fa-hands-helping"></i>志愿者经历
+                </h2>
+                <div class="section-content">
+                    <div class="volunteer-item">
+                        <div class="volunteer-header">
+                            <div class="volunteer-org">First Code Academy</div>
+                            <div class="period">2018.11 -- 2019.06 (8个月)</div>
+                        </div>
+                        <div class="volunteer-role">导师</div>
+                        <ul class="achievements">
+                            <li>英语教学4-7岁小朋友Scratch编程(模块化可视编程语言)</li>
+                            <li>控制机器人或APP内的动画展示逻辑</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="resume-section">
+                <h2 class="section-title">
+                    <i class="fas fa-graduation-cap"></i>教育信息
+                </h2>
+                <div class="section-content">
+                    <div class="education-item">
+                        <div class="education-header">
+                            <div class="institution">广东嘉应学院计算机科学与技术学院</div>
+                        </div>
+                        <div class="degree">软件工程专业，本科学士学位</div>
+                        <div class="period">2009 -- 2013</div>
+                        <p>粤语(母语)，国语(母语)，英语(IELTS: 6.5; CET-6)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Courses Section -->
+            <section class="resume-section">
+                <h2 class="section-title">
+                    <i class="fas fa-book"></i>课程学习经历
+                </h2>
+                <div class="section-content">
+                    <div class="course-item">商业领导力，2020.10</div>
+                    <div class="course-item">企业经营管理（LDP+），2020.06</div>
+                </div>
+            </section>
+
+            <!-- Certificates Section -->
+            <section class="resume-section">
+                <h2 class="section-title">
+                    <i class="fas fa-award"></i>证书奖项
+                </h2>
+                <div class="section-content">
                     <ul class="achievements">
-                        <li>英语教学4-7岁小朋友Scratch编程(模块化可视编程语言)</li>
-                        <li>控制机器人或APP内的动画展示逻辑</li>
+                        <li>PMP项目管理认证，2022.06.25</li>
                     </ul>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
-        <!-- Education Section -->
-        <section class="resume-section">
-            <h2 class="section-title">
-                <i class="fas fa-graduation-cap"></i>教育信息
-            </h2>
-            <div class="section-content">
-                <div class="education-item">
-                    <div class="education-header">
-                        <div class="institution">广东嘉应学院计算机科学与技术学院</div>
+        <!-- English Resume Content -->
+        <div class="resume-content" id="en-resume" style="display: none;">
+            <!-- Header Section -->
+            <header class="resume-header">
+                <div class="decorative-shape"></div>
+                <div class="decorative-shape-2"></div>
+                <div class="header-content">
+                    <div class="profile-img">
+                        <img src="images/portraits.jpeg" alt="Carl Portrait" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
                     </div>
-                    <div class="degree">软件工程专业，本科学士学位</div>
-                    <div class="period">2009 -- 2013</div>
-                    <p>粤语(母语)，国语(母语)，英语(IELTS: 6.5; CET-6)</p>
+                    <div class="header-text">
+                        <h1 class="name">Carl He</h1>
+                        <div class="title">Senior Software Engineer</div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>185 0303 6612</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>ahjun30@hotmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <a href="https://www.linkedin.com/in/carlhe30/" target="_blank" style="display:inline-flex;align-items:center;color:#0077b5;text-decoration:none;font-weight:500;">
+                                    <i class="fab fa-linkedin" style="font-size:1.1em;margin-right:6px;"></i>LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </header>
 
-        <!-- Courses Section -->
-        <section class="resume-section">
-            <h2 class="section-title">
-                <i class="fas fa-book"></i>课程学习经历
-			</h2>
-            <div class="section-content">
-                <div class="course-item">商业领导力，2020.10</div>
-                <div class="course-item">企业经营管理（LDP+），2020.06</div>
-            </div>
-        </section>
+            <!-- Summary Section -->
+            <section class="resume-section">
+                <h2 class="section-title">
+                    <i class="fas fa-user"></i>Professional Summary
+                </h2>
+                <div class="section-content">
+                    <p>Possess 10 years of experience in enterprise-level software development with small team management expertise.</p>
+                    <p>Core competencies include navigating ambiguity, creative problem solving, multi-domain experience.</p>
+                </div>
+            </section>
 
-        <!-- Certificates Section -->
-        <section class="resume-section">
-            <h2 class="section-title">
-                <i class="fas fa-award"></i>证书奖项
-            </h2>
-            <div class="section-content">
-                <ul class="achievements">
-                    <li>PMP项目管理认证，2022.06.25</li>
-                </ul>
-            </div>
-        </section>
+            <!-- Experience Section -->
+            <section class="resume-section">
+                <h2 class="section-title">
+                    <i class="fas fa-briefcase"></i>Professional Experience
+                </h2>
+                <div class="section-content">
+                    <!-- RY DIGITAL CONSULTING -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company">RY DIGITAL CONSULTING | SHENZHEN, CHINA</div>
+                            <div class="period">2025.04-Current</div>
+                        </div>
+                        <div class="position">Full Stack Developer (AI Focus) | Co-founder</div>
+                        
+                        <div class="project-title">Technical Advancement Initiative</div>
+                        <ul class="achievements">
+                            <li>Systematically engineered production-grade LLM applications (Claude 3.7) with focus on AI integration in education scenarios</li>
+                        </ul>
+                        
+                        <div class="project-title">Full-stack Development</div>
+                        <ul class="achievements">
+                            <li>Architected, developed, deployed and maintained an AI-powered education mini-program using: Java 17 + Spring Boot | Uni-app | Milvus | Redis</li>
+                        </ul>
+                        
+                        <div class="project-title">Key Achievements</div>
+                        <ul class="achievements">
+                            <li>Designed textbook knowledge structuring pipeline: Upload Q&A database/knowledge points → Text vectorization (text-embedding-ada-002) → Milvus vector database construction</li>
+                            <li>Built semantic retrieval chain: User query → Vector search → Knowledge association → Claude 3.7 generative response</li>
+                            <li>Accelerated project coding via Claude 3.7 Builder while establishing Prompt Engineering standards and AI-generated code quality assessment system</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Shein Technology Co., Ltd. -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company">Shein Technology Co., Ltd.</div>
+                            <div class="period">2023.06 - 2025.03(1y9M)</div>
+                        </div>
+                        <div class="position">Senior Developer in AIDC</div>
+                        <p style="margin: 10px 0; color: var(--gray); font-style: italic;">SHEIN is a global leading fast-fashion cross-border e-commerce platform, offering trendy and affordable products to meet the personalized needs of young consumers worldwide.</p>
+                        
+                        <div class="project-title">Price Comparison System | Global Operations Center</div>
+                        <ul class="achievements">
+                            <li>E-commerce Price Comparison: Integrated pricing and procurement data from multiple competitive platforms into six major and several sub-strategies for procurement workflows. Consolidated data into comparable pricing and implemented AI algorithms to automatically determine price comparability. Provided approval and quality control features to ensure data integrity.</li>
+                            <li>Leveraged in-depth knowledge of messaging middleware to ensure efficient and accurate communication between systems.</li>
+                        </ul>
+                        
+                        <div class="project-title">Configurable Control Center | AIDC (Artificial Intelligence Digital Center)</div>
+                        <ul class="achievements">
+                            <li>Developed and maintained a highly configurable backend system, enabling visual configuration of components for homepage, list pages, and product detail pages. This significantly enhanced system usability and maintainability.</li>
+                            <li>Expanded system capabilities to support platform-based store design while ensuring compliance with local regulations through cross-physical-center data storage.</li>
+                            <li>Intelligent Customer Service: Implemented AI-driven intelligent customer service solutions. Led cross-department collaboration involving product, frontend, backend, and testing teams to standardize documentation processes and automate issue resolution workflows. Explored vector databases, tokens, and chunking technologies, and implemented embeddings and prompt tuning to enhance system intelligence. Achieved a 33% issue resolution rate within six months of system launch (excluding cases with no feedback).</li>
+                            <li>Daily Operations: Responsible for swiftly identifying and resolving production environment issues, ensuring efficient and stable system operations. Conducted pressure monitoring and dynamic allocation for servers, middleware, and databases, guaranteeing high system availability.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- SF Technology Co., Ltd. -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company">SF Technology Co., Ltd.</div>
+                            <div class="period">2021.05 – 2023.02(1y10M)</div>
+                        </div>
+                        <div class="position">Senior Developer</div>
+                        <p style="margin: 10px 0; color: var(--gray); font-style: italic;">SF Express is China's leading integrated logistics service provider, offering efficient, secure, and reliable delivery solutions to meet diverse customer needs.</p>
+                        
+                        <div class="project-title">New real-time evaluation system | Core developer | 2022.01 – 2023.02</div>
+                        <p style="margin: 10px 0; color: var(--gray);">A system that not only evaluate courier's performance and wage, but also execute company and regional operating activities. It contains modules like customer complaints, reviews, punctuality, risk controls, operating activities, training courses, etc.</p>
+                        <ul class="achievements">
+                            <li>Competitive with T-1 or real-time data sources. Designed to quick reaction capability and high concurrency.</li>
+                            <li>Highly configurable, multiple dimensions config controls. Such as the activity system.</li>
+                            <li>Configurable lottery system, with recovery mode.</li>
+                            <li>Paratactic leaderboard base on Redis zSet. Optimizing business logic on algorithm.</li>
+                            <li>Implement a multi-level cache util.</li>
+                            <li>Analyze and integrate issues for complicated business and logic.</li>
+                            <li>This system released from 2 pilot cities (about 30000 users), to now involved over 370000 couriers, coverage reach 97% of the whole SF group.</li>
+                            <li>16 cities have accrual relevant, over 100000 couriers. Over 90000 couriers have income increases. Average increase 670 per person.</li>
+                            <li>Online operating activities have been held 14 times, over 250000 users. Both service quality and business incomes have been improved.</li>
+                            <li>Activity configuration system have been used by 39 regions, coverage over 86%. In Q4 2022, there are more than 40 activities have been created by regions theirselves.</li>
+                            <li>Five Stars Staff, 2022.08</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Ping An Pu Hui Co., Ltd. -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company">Ping An Pu Hui Co., Ltd.</div>
+                            <div class="period">2019.08 – 2021.04 (1y9M)</div>
+                        </div>
+                        <div class="position">Senior Developer, Product module owner</div>
+                        <p style="margin: 10px 0; color: var(--gray); font-style: italic;">Ping An Puhui is a financial services brand under Ping An Group, dedicated to providing convenient and secure financial solutions for individuals and small businesses, fostering the growth of inclusive finance.</p>
+                        
+                        <div class="project-title">Risks and assets management system</div>
+                        <p style="margin: 10px 0; color: var(--gray);">A system that according to risk control factors and statistical rules, to satisfy the demands of funding parties that cooperate with us. And adjust parameters with statistics accordingly. In order to minimized funding risks and maximized profit.</p>
+                        <ul class="achievements">
+                            <li>Lead a team of 4.</li>
+                            <li>Responsible for function design, technology selection, quality assurance and releasing products.</li>
+                            <li>Decoupling system, using cache, thread pool, MQ, DB read/write separation tech-skill to rationalized system-wide functionality and maximized the performance.</li>
+                            <li>After the system go live for a year, the profit had been increased 28%. Queries per day was 4 million+.</li>
+                        </ul>
+                        
+                        <div class="project-title">Credit and loan products management system</div>
+                        <p style="margin: 10px 0; color: var(--gray);">Core system in loans business. The products module contains all loan product's properties, configurations and rules. Calculating the specified loan product for each applicant, according to different business strategies. The pricing module could calculate IRR according to customer's qualification and various of pricing strategies. Then the engine module would according to the demands of funding parties, weight factor, and the result from risks and assets management system, to calculate the exact funding party.</p>
+                        <ul class="achievements">
+                            <li>This system helps the company expanding business rapidly.</li>
+                            <li>High concurrency, high availability, multi-level cached, load balanced.</li>
+                            <li>Within a year, configuration webpage helps business expanded rapidly. 38 funding parties have been collaborated with us in 2 months, because of the highly configurable system design.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Ctrip Travel Network Technology (Shenzhen) Co., Ltd. -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company">Ctrip Travel Network Technology (Shenzhen) Co., Ltd.</div>
+                            <div class="period">2015.08 – 2019.08(4y)</div>
+                        </div>
+                        <div class="position">Senior Developer</div>
+                        <p style="margin: 10px 0; color: var(--gray); font-style: italic;">Ctrip is China's leading online travel service platform, offering one-stop travel solutions including flights, hotels, vacation packages, and car rentals, enabling users to explore the world effortlessly.</p>
+                        
+                        <div class="project-title">Domestic flight online booking System</div>
+                        <p style="margin: 10px 0; color: var(--gray);">Domestic flight online booking process is one of the primary businesses in CTrip. My daily working scope are, flight homepage, route result list page, booking detail page, payment page, and order detail page. Including the webpage and back-end server developing. Furthermore, the quires in result list page reached more than 27 million per day, booking process more than 8 million per day.</p>
+                        <ul class="achievements">
+                            <li>Both front-end and back-end developing (Java, C#, JavaScript).</li>
+                            <li>Responsible for ancillary products (Lounge, pickup service etc.). This project rewarded annual excellent project of 2018.</li>
+                            <li>Skillful on product releasing, CICD Processes. Experienced on locating live issues.</li>
+                            <li>Sense of being the owner, tracking products from requirement discussion to online performance. In order to optimize product with PM.</li>
+                            <li>Knowledge sharing, problem solving, solution providing, standard making.</li>
+                        </ul>
+                        
+                        <div class="project-title">Refactoring domestic flight online booking system from C# to Java</div>
+                        <p style="margin: 10px 0; color: var(--gray);">Old domestic flight online booking system went through 10 years develop, it had complex and unsolved business logic, redundant codes, unclear functions and problems left over by history. While refactoring, we still ensure requirements release on time on both C# site and Java site. Gated Launch new site while quires per day reached 27 million.</p>
+                        <ul class="achievements">
+                            <li>Clear business logics, architecture design, technology selection, code implementation and quality assurance.</li>
+                            <li>Gated Launch new site and monitoring statistic.</li>
+                        </ul>
+                        
+                        <div class="project-title">Fuzzy search</div>
+                        <ul class="achievements">
+                            <li>First team to aggregate domestic and international flight result service in Ctrip. Provide high concurrency capacity service for marketing campaigns.</li>
+                            <li>Reducing read/write pressure by using Redis and DB's read write separation. In order to support Wechat campaign, which had 3k QPS at peak. Interface response 50% quicker.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Expedia offshore RDC -->
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="company">Expedia offshore RDC</div>
+                            <div class="period">2013.09 – 2015.08(2y)</div>
+                        </div>
+                        <div class="position">Full-stack Developer</div>
+                        <p style="margin: 10px 0; color: var(--gray); font-style: italic;">Expedia is a global leading online travel service platform, offering one-stop booking services for flights, hotels, car rentals, and vacation packages, dedicated to helping users effortlessly plan their trips worldwide.</p>
+                        
+                        <ul class="achievements">
+                            <li>Responsible for maintaining and developing US, AU and NZ's voucher system. And their requirements iterations.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="resume-section">
+                <h2 class="section-title">
+                    <i class="fas fa-code"></i>Technical Skills
+                </h2>
+                <div class="section-content">
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <div class="skill-title">AI Engineering</div>
+                            <div class="skill-items">
+                                <div class="skill-tag">Prompt Engineering</div>
+                                <div class="skill-tag">RAG Architecture</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="skill-title">Technical Skills</div>
+                            <div class="skill-items">
+                                <div class="skill-tag">Java 17+</div>
+                                <div class="skill-tag">C#</div>
+                                <div class="skill-tag">Python</div>
+                                <div class="skill-tag">JavaScript</div>
+                                <div class="skill-tag">Database Optimization</div>
+                                <div class="skill-tag">System Architecture Design</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="skill-title">Data-related</div>
+                            <div class="skill-items">
+                                <div class="skill-tag">RDBMS (MySQL, Oracle DB)</div>
+                                <div class="skill-tag">NoSQL (Redis)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="skill-title">Frameworks and Middleware</div>
+                            <div class="skill-items">
+                                <div class="skill-tag">Spring Framework (Core, Boot, MVC)</div>
+                                <div class="skill-tag">Spring Cloud</div>
+                                <div class="skill-tag">RESTful Services</div>
+                                <div class="skill-tag">Microservices Architecture</div>
+                                <div class="skill-tag">Dubbo</div>
+                                <div class="skill-tag">MyBatis</div>
+                                <div class="skill-tag">Kafka MQ</div>
+                                <div class="skill-tag">RocketMQ</div>
+                                <div class="skill-tag">Nginx</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="skill-title">Containerization</div>
+                            <div class="skill-items">
+                                <div class="skill-tag">Docker</div>
+                                <div class="skill-tag">Kubernetes</div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <div class="skill-title">Tools/Methodologies</div>
+                            <div class="skill-items">
+                                <div class="skill-tag">Git</div>
+                                <div class="skill-tag">Jenkins</div>
+                                <div class="skill-tag">Maven</div>
+                                <div class="skill-tag">Agile/Scrum</div>
+                                <div class="skill-tag">DevOps Practices</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Volunteer Section -->
+            <section class="resume-section">
+                <h2 class="section-title">
+                    <i class="fas fa-hands-helping"></i>Volunteer Experience
+                </h2>
+                <div class="section-content">
+                    <div class="volunteer-item">
+                        <div class="volunteer-header">
+                            <div class="volunteer-org">First Code Academy</div>
+                            <div class="period">2018.11 – 2019.06(8M)</div>
+                        </div>
+                        <div class="volunteer-role">Instructor</div>
+                        <p style="margin: 10px 0; color: var(--gray); font-style: italic;">First Code Academy is a global leading coding education institution, focused on offering innovative programming and technology courses for young people, nurturing the next generation of tech talent.</p>
+                        <ul class="achievements">
+                            <li>Teaching Scratch (block-based visual programming language) to 4-7 years old children. In order to show logic on robot or animate in APP.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="resume-section">
+                <h2 class="section-title">
+                    <i class="fas fa-graduation-cap"></i>Education
+                </h2>
+                <div class="section-content">
+                    <div class="education-item">
+                        <div class="education-header">
+                            <div class="institution">Computer and science, Jiaying University, Guangdong</div>
+                        </div>
+                        <div class="degree">Software Engineering, Bachelor, 2009 – 2013</div>
+                        <div class="period">2009 -- 2013</div>
+                        <p>Cantonese(Native), Mandarin(Native), English (IELTS: 6.5; CET-6)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Courses Section -->
+            <section class="resume-section">
+                <h2 class="section-title">
+                    <i class="fas fa-book"></i>Extra Curriculum
+                </h2>
+                <div class="section-content">
+                    <div class="course-item">Business Leadership, 2020 Oct.</div>
+                    <div class="course-item">Enterprise Operating and Management (LDP+), 2020 Jun.</div>
+                </div>
+            </section>
+
+            <!-- Certificates Section -->
+            <section class="resume-section">
+                <h2 class="section-title">
+                    <i class="fas fa-award"></i>Certifications
+                </h2>
+                <div class="section-content">
+                    <ul class="achievements">
+                        <li>Project Management Professional (PMP), 2022.06.25</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
     </div>
 
     <div class="chat-widget" id="chatWidget">
@@ -935,6 +1337,30 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // 语言切换功能
+            const langBtns = document.querySelectorAll('.lang-btn');
+            const zhResume = document.getElementById('zh-resume');
+            const enResume = document.getElementById('en-resume');
+            
+            langBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    
+                    // 更新按钮状态
+                    langBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 切换简历内容
+                    if (lang === 'zh') {
+                        zhResume.style.display = 'block';
+                        enResume.style.display = 'none';
+                    } else {
+                        zhResume.style.display = 'none';
+                        enResume.style.display = 'block';
+                    }
+                });
+            });
+            
             // 添加打印按钮功能
             const printBtn = document.createElement('button');
             printBtn.innerHTML = '<i class="fas fa-print"></i> 打印简历';
