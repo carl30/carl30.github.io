@@ -679,6 +679,45 @@
             font-size: 1.5rem;
         }
         
+        /* 加载圆圈样式 */
+        .loading-message {
+            background-color: white;
+            color: var(--dark);
+            border: 1px solid #e2e8f0;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            max-width: 80%;
+            border-radius: 18px;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .loading-message::before {
+            content: "🤖";
+            position: absolute;
+            left: -40px;
+            top: 5px;
+            font-size: 1.5rem;
+        }
+        
+        .loading-spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #e2e8f0;
+            border-top: 2px solid var(--secondary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
 
         
         .chat-input {
@@ -1377,6 +1416,9 @@
                                 <div class="skill-tag">Maven</div>
                                 <div class="skill-tag">Agile/Scrum</div>
                                 <div class="skill-tag">DevOps Practices</div>
+                                <div class="skill-tag">CI/CD</div>
+                                <div class="skill-tag">Global Software Development Experience</div>
+                                <div class="skill-tag">High-Availability Cluster Deployment</div>
                             </div>
                         </div>
                     </div>
@@ -1649,6 +1691,13 @@
             // 滚动到底部
             chatBody.scrollTop = chatBody.scrollHeight;
 
+            // 创建并显示加载圆圈
+            const loadingMessage = document.createElement('div');
+            loadingMessage.className = 'loading-message';
+            loadingMessage.innerHTML = '<div class="loading-spinner"></div><span>AI正在思考中...</span>';
+            chatBody.appendChild(loadingMessage);
+            chatBody.scrollTop = chatBody.scrollHeight;
+
             // 系统提示词（强化限制）
             const systemPrompt = carlResume.trim();
 
@@ -1678,6 +1727,9 @@
                 const data = await response.json();
                 const reply = data.choices[0].message.content;
                 
+                // 移除加载圆圈
+                chatBody.removeChild(loadingMessage);
+                
                 // 创建AI回复消息元素
                 const assistantMessage = document.createElement('div');
                 assistantMessage.className = 'chat-message assistant-message';
@@ -1689,6 +1741,10 @@
                 
             } catch (error) {
                 console.error("API Error:", error);
+                
+                // 移除加载圆圈
+                chatBody.removeChild(loadingMessage);
+                
                 const errorMsg = document.createElement('div');
                 errorMsg.className = 'chat-message assistant-message';
                 errorMsg.textContent = "Sorry, I'm having trouble answering right now. Please try again later.";
